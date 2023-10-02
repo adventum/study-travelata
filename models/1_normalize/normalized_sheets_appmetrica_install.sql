@@ -16,6 +16,6 @@ toLowCardinality(__table_name) AS __table_name,
 NOW() as __normalized_at
 FROM 
 (
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
+from travelata._airbyte_raw_sheets_appmetrica_travelata_install
 )
