@@ -3,7 +3,7 @@
     
     
         
-        insert into travelata.my_first_dbt_model__dbt_backup ("id")
+        insert into travelata.my_first_dbt_model ("id")
   /*
     Welcome to your first dbt model!
     Did you know that you can also configure models directly within SQL files?
