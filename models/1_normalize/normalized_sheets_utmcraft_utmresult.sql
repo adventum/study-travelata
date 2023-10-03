@@ -16,5 +16,5 @@ select
 	now() as __normalized_at
 from
 	(select *,
-	'travelata._airbyte_raw_sheets_default_travelatautmcraft_normalize_utmcraft_utmresult' as __table_name 
+	'travelata._airbyte_raw_normalize_utmcraft_utmresult' as __table_name 
 	from travelata.`_airbyte_raw_normalize_utmcraft_utmresult`) x
