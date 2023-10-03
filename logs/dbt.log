@@ -444,7 +444,8 @@ from source_data
   create view travelata.normalize_sheet_default_installs 
   
   as (
-    select *
+    select *
+
 from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
   )...
 [0m10:04:56.272563 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -661,7 +662,8 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalize_sheet_default_installs__dbt_tmp 
   
   as (
-    select *
+    select *
+
 from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
   )...
 [0m10:20:37.174686 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -933,16 +935,26 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalize_sheet_default_installs__dbt_tmp 
   
   as (
-    SELECT parseDateTime(
-        JSONExtractString(_airbyte_data, 'install_datetime'),
-        '%d.%m.%Y'
-    ) AS __datetime,
-    JSONExtractString(_airbyte_data, 'city') AS city
-
-
-FROM (
-        select *
-        from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+    SELECT parseDateTime(
+
+        JSONExtractString(_airbyte_data, 'install_datetime'),
+
+        '%d.%m.%Y'
+
+    ) AS __datetime,
+
+    JSONExtractString(_airbyte_data, 'city') AS city
+
+
+
+
+
+FROM (
+
+        select *
+
+        from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
     )
   )...
 [0m10:33:22.330770 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -1214,36 +1226,66 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalize_sheet_default_installs__dbt_tmp 
   
   as (
-    SELECT parseDateTime(
-        JSONExtractString(_airbyte_data, 'install_datetime'),
-        '%d.%m.%Y'
-    ) AS __datetime,
-    JSONExtractString(_airbyte_data, 'city') AS city
-
-
-FROM (
-        select *
-        from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
-    )SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+    SELECT parseDateTime(
+
+        JSONExtractString(_airbyte_data, 'install_datetime'),
+
+        '%d.%m.%Y'
+
+    ) AS __datetime,
+
+    JSONExtractString(_airbyte_data, 'city') AS city
+
+
+
+
+
+FROM (
+
+        select *
+
+        from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
+    )SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
 )
   )...
 [0m11:21:54.016922 [debug] [Thread-1  ]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalize_sheet_default_installs"} */
@@ -1252,43 +1294,75 @@ from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
   create view travelata.normalize_sheet_default_installs__dbt_tmp 
   
   as (
-    SELECT parseDateTime(
-        JSONExtractString(_airbyte_data, 'install_datetime'),
-        '%d.%m.%Y'
-    ) AS __datetime,
-    JSONExtractString(_airbyte_data, 'city') AS city
-
-
-FROM (
-        select *
-        from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
-    )SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+    SELECT parseDateTime(
+
+        JSONExtractString(_airbyte_data, 'install_datetime'),
+
+        '%d.%m.%Y'
+
+    ) AS __datetime,
+
+    JSONExtractString(_airbyte_data, 'city') AS city
+
+
+
+
+
+FROM (
+
+        select *
+
+        from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
+    )SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
 )
   )
 [0m11:21:54.017910 [debug] [Thread-1  ]: Timing info for model.travelata.normalize_sheet_default_installs (execute): 2023-09-28 11:21:53.905743 => 2023-09-28 11:21:54.017910
 [0m11:21:54.027916 [debug] [Thread-1  ]: Database Error in model normalize_sheet_default_installs (models\1_normalize\normalize_sheet_default_installs.sql)
   :HTTPDriver for http://localhost:8123 returned response code 400)
-   Code: 62. DB::Exception: Syntax error: failed at position 549 ('parseDateTime') (line 18, col 1): parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-  JSONExtractString(_airbyte_data, 'city') AS city,
+   Code: 62. DB::Exception: Syntax error: failed at position 549 ('parseDateTime') (line 18, col 1): parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+  JSONExtractString(_airbyte_data, 'city') AS city,
+
   JSONExtractSt. Expected one of: FINAL, SAMPLE, table, table function, subquery or list of joined tables, array join, LEFT ARRAY JOIN, INNER, ARRAY JOIN, JOIN, PREWHERE, WHERE, GROUP BY, WITH, HAVING, WINDOW, ORDER BY, LIMIT, OFFSET, SETTINGS, UNION, EXCEPT, INTERSECT. (SYNTAX_ERROR) (version 23.3.13.6 (official build))
   compiled Code at target\run\travelata\models\1_normalize\normalize_sheet_default_installs.sql
 [0m11:21:54.028911 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ed8c38e2-03ed-40df-ab51-f0d7ea4729ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AB0B7E0A60>]}
@@ -1364,8 +1438,10 @@ drop table if exists travelata.my_second_dbt_model__dbt_backup
 [0m11:21:54.435952 [info ] [MainThread]: 
 [0m11:21:54.437956 [error] [MainThread]: [33mDatabase Error in model normalize_sheet_default_installs (models\1_normalize\normalize_sheet_default_installs.sql)[0m
 [0m11:21:54.440952 [error] [MainThread]:   :HTTPDriver for http://localhost:8123 returned response code 400)
-[0m11:21:54.441956 [error] [MainThread]:    Code: 62. DB::Exception: Syntax error: failed at position 549 ('parseDateTime') (line 18, col 1): parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-[0m11:21:54.443958 [error] [MainThread]:   JSONExtractString(_airbyte_data, 'city') AS city,
+[0m11:21:54.441956 [error] [MainThread]:    Code: 62. DB::Exception: Syntax error: failed at position 549 ('parseDateTime') (line 18, col 1): parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+[0m11:21:54.443958 [error] [MainThread]:   JSONExtractString(_airbyte_data, 'city') AS city,
+
 [0m11:21:54.444953 [error] [MainThread]:   JSONExtractSt. Expected one of: FINAL, SAMPLE, table, table function, subquery or list of joined tables, array join, LEFT ARRAY JOIN, INNER, ARRAY JOIN, JOIN, PREWHERE, WHERE, GROUP BY, WITH, HAVING, WINDOW, ORDER BY, LIMIT, OFFSET, SETTINGS, UNION, EXCEPT, INTERSECT. (SYNTAX_ERROR) (version 23.3.13.6 (official build))
 [0m11:21:54.446955 [error] [MainThread]:   compiled Code at target\run\travelata\models\1_normalize\normalize_sheet_default_installs.sql
 [0m11:21:54.447950 [info ] [MainThread]: 
@@ -1537,26 +1613,46 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalize_sheet_default_installs__dbt_tmp 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
 )
   )...
 [0m11:22:33.590861 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
@@ -1829,27 +1925,48 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalize_sheet_default_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+
 )
   )...
 [0m14:51:53.638153 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -1872,26 +1989,46 @@ from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
   create view travelata.normalize_sheet_default_installs__dbt_tmp 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
 )
   )...
 [0m14:51:53.729307 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -2155,27 +2292,48 @@ from source_data
   create view travelata.normalize_sheet_default_events__dbt_tmp 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+
 )
   )...
 [0m06:05:49.668625 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
@@ -2226,26 +2384,46 @@ drop table if exists travelata.normalize_sheet_default_events__dbt_backup
   create view travelata.normalize_sheet_default_installs__dbt_tmp 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
 )
   )...
 [0m06:05:50.045238 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
@@ -2517,27 +2695,48 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalize_sheet_default_events__dbt_tmp 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+
 )
   )...
 [0m06:12:17.466315 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -2588,26 +2787,46 @@ drop table if exists travelata.normalize_sheet_default_events__dbt_backup
   create view travelata.normalize_sheet_default_installs__dbt_tmp 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
 )
   )...
 [0m06:12:17.853091 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
@@ -2659,18 +2878,30 @@ drop table if exists travelata.normalize_sheet_default_installs__dbt_backup
   create view travelata.normalize_sheet_default_profiles 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles
+
 )
   )...
 [0m06:12:18.224854 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
@@ -2923,26 +3154,46 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalize_sheets_default_travelataappmetrica_install 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
 )
   )...
 [0m06:20:04.965166 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
@@ -2966,18 +3217,30 @@ from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
   create view travelata.normalize_sheets_default_travelataappmetrica_profiles 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles
+
 )
   )...
 [0m06:20:05.043935 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -3001,27 +3264,48 @@ from travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles
   create view travelata.normalizesheets_default_travelataappmetrica_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+
 )
   )...
 [0m06:20:05.135182 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
@@ -3268,27 +3552,48 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalize_sheets_default_travelataappmetrica_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+
 )
   )...
 [0m06:21:02.634392 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
@@ -3311,26 +3616,46 @@ from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
   create view travelata.normalize_sheets_default_travelataappmetrica_install__dbt_tmp 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
 )
   )...
 [0m06:21:02.724836 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
@@ -3381,18 +3706,30 @@ drop table if exists travelata.normalize_sheets_default_travelataappmetrica_inst
   create view travelata.normalize_sheets_default_travelataappmetrica_profiles__dbt_tmp 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles
+
 )
   )...
 [0m06:21:03.084524 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -3669,27 +4006,48 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalized_sheets_appmetrica_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_events' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
+
 )
   )...
 [0m08:56:06.699397 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
@@ -3713,26 +4071,46 @@ from travelata._airbyte_raw_sheets_default_travelataappmetrica_events
   create view travelata.normalized_sheets_appmetrica_install 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_install' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
+
 )
   )...
 [0m08:56:06.813155 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
@@ -3756,18 +4134,30 @@ from travelata._airbyte_raw_sheets_default_travelataappmetrica_install
   create view travelata.normalized_sheets_appmetrica_profiles 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles' as __table_name
-from travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles' as __table_name
+
+from travelata._airbyte_raw_sheets_default_travelataappmetrica_profiles
+
 )
   )...
 [0m08:56:06.902197 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
@@ -4017,27 +4407,48 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalized_sheets_appmetrica_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata.sheets_appmetrica_travelata__events' as __table_name
-from travelata.sheets_appmetrica_travelata_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata.sheets_appmetrica_travelata__events' as __table_name
+
+from travelata.sheets_appmetrica_travelata_events
+
 )
   )...
 [0m09:03:59.628430 [debug] [Thread-1  ]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_events"} */
@@ -4046,27 +4457,48 @@ from travelata.sheets_appmetrica_travelata_events
   create view travelata.normalized_sheets_appmetrica_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata.sheets_appmetrica_travelata__events' as __table_name
-from travelata.sheets_appmetrica_travelata_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata.sheets_appmetrica_travelata__events' as __table_name
+
+from travelata.sheets_appmetrica_travelata_events
+
 )
   )
 [0m09:03:59.628430 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_appmetrica_events (execute): 2023-10-02 09:03:59.535286 => 2023-10-02 09:03:59.628430
@@ -4093,26 +4525,46 @@ from travelata.sheets_appmetrica_travelata_events
   create view travelata.normalized_sheets_appmetrica_install 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata.sheets_appmetrica_travelata_install' as __table_name
-from travelata.sheets_appmetrica_travelata_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata.sheets_appmetrica_travelata_install' as __table_name
+
+from travelata.sheets_appmetrica_travelata_install
+
 )
   )...
 [0m09:03:59.802684 [debug] [Thread-1  ]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_install"} */
@@ -4121,26 +4573,46 @@ from travelata.sheets_appmetrica_travelata_install
   create view travelata.normalized_sheets_appmetrica_install 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata.sheets_appmetrica_travelata_install' as __table_name
-from travelata.sheets_appmetrica_travelata_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata.sheets_appmetrica_travelata_install' as __table_name
+
+from travelata.sheets_appmetrica_travelata_install
+
 )
   )
 [0m09:03:59.802684 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_appmetrica_install (execute): 2023-10-02 09:03:59.739411 => 2023-10-02 09:03:59.802684
@@ -4167,18 +4639,30 @@ from travelata.sheets_appmetrica_travelata_install
   create view travelata.normalized_sheets_appmetrica_profiles 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata.sheets_appmetrica_travelata_profiles' as __table_name
-from travelata.sheets_appmetrica_travelata_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata.sheets_appmetrica_travelata_profiles' as __table_name
+
+from travelata.sheets_appmetrica_travelata_profiles
+
 )
   )...
 [0m09:03:59.869362 [debug] [Thread-1  ]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_profiles"} */
@@ -4187,18 +4671,30 @@ from travelata.sheets_appmetrica_travelata_profiles
   create view travelata.normalized_sheets_appmetrica_profiles 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata.sheets_appmetrica_travelata_profiles' as __table_name
-from travelata.sheets_appmetrica_travelata_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata.sheets_appmetrica_travelata_profiles' as __table_name
+
+from travelata.sheets_appmetrica_travelata_profiles
+
 )
   )
 [0m09:03:59.869362 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_appmetrica_profiles (execute): 2023-10-02 09:03:59.814452 => 2023-10-02 09:03:59.869362
@@ -4439,27 +4935,48 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalized_sheets_appmetrica_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+
 )
   )...
 [0m09:05:28.315341 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
@@ -4483,26 +5000,46 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_events
   create view travelata.normalized_sheets_appmetrica_install 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+
 )
   )...
 [0m09:05:28.391074 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
@@ -4526,18 +5063,30 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_install
   create view travelata.normalized_sheets_appmetrica_profiles 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+
 )
   )...
 [0m09:05:28.479065 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -4781,27 +5330,48 @@ from source_data
   create view travelata.normalized_sheets_appmetrica_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+
 )
   )...
 [0m15:46:43.861813 [debug] [Thread-1 (]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_events"} */
@@ -4810,27 +5380,48 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_events
   create view travelata.normalized_sheets_appmetrica_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+
 )
   )
 [0m15:46:43.867840 [debug] [Thread-1 (]: Timing info for model.travelata.normalized_sheets_appmetrica_events (execute): 2023-10-02 15:46:43.764627 => 2023-10-02 15:46:43.867840
@@ -4857,26 +5448,46 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_events
   create view travelata.normalized_sheets_appmetrica_install 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+
 )
   )...
 [0m15:46:44.007655 [debug] [Thread-1 (]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_install"} */
@@ -4885,26 +5496,46 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_install
   create view travelata.normalized_sheets_appmetrica_install 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+
 )
   )
 [0m15:46:44.008654 [debug] [Thread-1 (]: Timing info for model.travelata.normalized_sheets_appmetrica_install (execute): 2023-10-02 15:46:43.954020 => 2023-10-02 15:46:44.008654
@@ -4931,18 +5562,30 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_install
   create view travelata.normalized_sheets_appmetrica_profiles 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+
 )
   )...
 [0m15:46:44.065746 [debug] [Thread-1 (]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_profiles"} */
@@ -4951,18 +5594,30 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
   create view travelata.normalized_sheets_appmetrica_profiles 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+
 )
   )
 [0m15:46:44.065746 [debug] [Thread-1 (]: Timing info for model.travelata.normalized_sheets_appmetrica_profiles (execute): 2023-10-02 15:46:44.015746 => 2023-10-02 15:46:44.065746
@@ -5244,27 +5899,48 @@ drop table if exists travelata.my_first_dbt_model__dbt_backup
   create view travelata.normalized_sheets_appmetrica_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+
 )
   )...
 [0m17:43:13.671696 [debug] [Thread-1 (]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_events"} */
@@ -5273,27 +5949,48 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_events
   create view travelata.normalized_sheets_appmetrica_events 
   
   as (
-    SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
-JSONExtractString(_airbyte_data, 'event_json') AS event_json,
-JSONExtractString(_airbyte_data, 'event_name') AS event_name,
-JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+    SELECT
+
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+
 )
   )
 [0m17:43:13.671696 [debug] [Thread-1 (]: Timing info for model.travelata.normalized_sheets_appmetrica_events (execute): 2023-10-02 17:43:13.608762 => 2023-10-02 17:43:13.671696
@@ -5320,26 +6017,46 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_events
   create view travelata.normalized_sheets_appmetrica_install 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+
 )
   )...
 [0m17:43:13.739663 [debug] [Thread-1 (]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_install"} */
@@ -5348,26 +6065,46 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_install
   create view travelata.normalized_sheets_appmetrica_install 
   
   as (
-    SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
-JSONExtractString(_airbyte_data, 'city') AS city,
-JSONExtractString(_airbyte_data, 'os_name') AS os_name,
-JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
-JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
-JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
-JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
-JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+    SELECT 
+
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+
+JSONExtractString(_airbyte_data, 'city') AS city,
+
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+
 )
   )
 [0m17:43:13.740184 [debug] [Thread-1 (]: Timing info for model.travelata.normalized_sheets_appmetrica_install (execute): 2023-10-02 17:43:13.688119 => 2023-10-02 17:43:13.740184
@@ -5394,18 +6131,30 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_install
   create view travelata.normalized_sheets_appmetrica_profiles 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+
 )
   )...
 [0m17:43:13.809502 [debug] [Thread-1 (]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_profiles"} */
@@ -5414,18 +6163,30 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
   create view travelata.normalized_sheets_appmetrica_profiles 
   
   as (
-    SELECT 
-JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
-JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
-JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
-JSONExtractString(_airbyte_data, 'city_code') AS city_code,
-toDateTime32(_airbyte_emitted_at) AS __emitted_at,
-toLowCardinality(__table_name) AS __table_name,
-NOW() as __normalized_at
-FROM 
-(
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+    SELECT 
+
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+
+toLowCardinality(__table_name) AS __table_name,
+
+NOW() as __normalized_at
+
+FROM 
+
+(
+
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
+
+from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+
 )
   )
 [0m17:43:13.810022 [debug] [Thread-1 (]: Timing info for model.travelata.normalized_sheets_appmetrica_profiles (execute): 2023-10-02 17:43:13.749584 => 2023-10-02 17:43:13.810022
@@ -5452,25 +6213,44 @@ from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
   create view travelata.normalized_sheets_utmcraft_utmresult 
   
   as (
-    select
-	JSONExtractString(_airbyte_data, 'id') as id,
-	JSONExtractString(_airbyte_data, 'created_at') as created_at,
-	JSONExtractString(_airbyte_data, 'updated_at') as updated_at,
-	JSONExtractString(_airbyte_data, 'utm_hashcode') as utm_hashcode,
-	JSONExtractString(_airbyte_data, 'data') as data,
-	JSONExtractString(_airbyte_data, 'created_by_id') as created_by_id,
-	JSONExtractString(_airbyte_data, 'form_id') as form_id,
-	JSONExtractString(_airbyte_data, 'updated_by_id') as updated_by_id,
-	JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
-	JSONExtractString(_airbyte_data, 'load_date') as load_date,
-	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
-	JSONExtractString(_airbyte_data, 'utm_hashcode') as utm_hashcode,
-	toLowCardinality(__table_name) as __table_name,
-	toDateTime32(_airbyte_emitted_at) as __emitted_at,
-	now() as __normalized_at
-from
-	(select *,
-	'travelata._airbyte_raw_sheets_default_travelatautmcraft_normalize_utmcraft_utmresult' as __table_name 
+    select
+
+	JSONExtractString(_airbyte_data, 'id') as id,
+
+	JSONExtractString(_airbyte_data, 'created_at') as created_at,
+
+	JSONExtractString(_airbyte_data, 'updated_at') as updated_at,
+
+	JSONExtractString(_airbyte_data, 'utm_hashcode') as utm_hashcode,
+
+	JSONExtractString(_airbyte_data, 'data') as data,
+
+	JSONExtractString(_airbyte_data, 'created_by_id') as created_by_id,
+
+	JSONExtractString(_airbyte_data, 'form_id') as form_id,
+
+	JSONExtractString(_airbyte_data, 'updated_by_id') as updated_by_id,
+
+	JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
+
+	JSONExtractString(_airbyte_data, 'load_date') as load_date,
+
+	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
+
+	JSONExtractString(_airbyte_data, 'utm_hashcode') as utm_hashcode,
+
+	toLowCardinality(__table_name) as __table_name,
+
+	toDateTime32(_airbyte_emitted_at) as __emitted_at,
+
+	now() as __normalized_at
+
+from
+
+	(select *,
+
+	'travelata._airbyte_raw_sheets_default_travelatautmcraft_normalize_utmcraft_utmresult' as __table_name 
+
 	from travelata.`_airbyte_raw_normalize_utmcraft_utmresult`) x
   )...
 [0m17:43:13.878409 [debug] [Thread-1 (]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_utmcraft_utmresult"} */
@@ -5479,25 +6259,44 @@ from
   create view travelata.normalized_sheets_utmcraft_utmresult 
   
   as (
-    select
-	JSONExtractString(_airbyte_data, 'id') as id,
-	JSONExtractString(_airbyte_data, 'created_at') as created_at,
-	JSONExtractString(_airbyte_data, 'updated_at') as updated_at,
-	JSONExtractString(_airbyte_data, 'utm_hashcode') as utm_hashcode,
-	JSONExtractString(_airbyte_data, 'data') as data,
-	JSONExtractString(_airbyte_data, 'created_by_id') as created_by_id,
-	JSONExtractString(_airbyte_data, 'form_id') as form_id,
-	JSONExtractString(_airbyte_data, 'updated_by_id') as updated_by_id,
-	JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
-	JSONExtractString(_airbyte_data, 'load_date') as load_date,
-	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
-	JSONExtractString(_airbyte_data, 'utm_hashcode') as utm_hashcode,
-	toLowCardinality(__table_name) as __table_name,
-	toDateTime32(_airbyte_emitted_at) as __emitted_at,
-	now() as __normalized_at
-from
-	(select *,
-	'travelata._airbyte_raw_sheets_default_travelatautmcraft_normalize_utmcraft_utmresult' as __table_name 
+    select
+
+	JSONExtractString(_airbyte_data, 'id') as id,
+
+	JSONExtractString(_airbyte_data, 'created_at') as created_at,
+
+	JSONExtractString(_airbyte_data, 'updated_at') as updated_at,
+
+	JSONExtractString(_airbyte_data, 'utm_hashcode') as utm_hashcode,
+
+	JSONExtractString(_airbyte_data, 'data') as data,
+
+	JSONExtractString(_airbyte_data, 'created_by_id') as created_by_id,
+
+	JSONExtractString(_airbyte_data, 'form_id') as form_id,
+
+	JSONExtractString(_airbyte_data, 'updated_by_id') as updated_by_id,
+
+	JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
+
+	JSONExtractString(_airbyte_data, 'load_date') as load_date,
+
+	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
+
+	JSONExtractString(_airbyte_data, 'utm_hashcode') as utm_hashcode,
+
+	toLowCardinality(__table_name) as __table_name,
+
+	toDateTime32(_airbyte_emitted_at) as __emitted_at,
+
+	now() as __normalized_at
+
+from
+
+	(select *,
+
+	'travelata._airbyte_raw_sheets_default_travelatautmcraft_normalize_utmcraft_utmresult' as __table_name 
+
 	from travelata.`_airbyte_raw_normalize_utmcraft_utmresult`) x
   )
 [0m17:43:13.878959 [debug] [Thread-1 (]: Timing info for model.travelata.normalized_sheets_utmcraft_utmresult (execute): 2023-10-02 17:43:13.818320 => 2023-10-02 17:43:13.878959
@@ -5524,33 +6323,60 @@ from
   create view travelata.normalized_sheets_vkads_adgroupsstatistics 
   
   as (
-    select
-	parseDateTime(JSONExtractString(_airbyte_data, 'date'), '%Y-%m-%d %H:%M:%S') AS __datetime,
-	JSONExtractString(_airbyte_data, 'tps') as tps,
-	JSONExtractString(_airbyte_data, 'spent') as spent,
-	JSONExtractString(_airbyte_data, 'shows') as shows,
-	JSONExtractString(_airbyte_data, 'clicks') as clicks,
-	JSONExtractString(_airbyte_data, 'base') as base,
-	JSONExtractString(_airbyte_data, 'date') as date,
-	JSONExtractString(_airbyte_data, 'moat') as moat,
-	JSONExtractString(_airbyte_data, 'romi') as romi,
-	JSONExtractString(_airbyte_data, 'video') as video,
-	JSONExtractString(_airbyte_data, 'events') as events,
-	JSONExtractString(_airbyte_data, 'uniques') as uniques,
-	JSONExtractString(_airbyte_data, 'carousel') as carousel,
-	JSONExtractString(_airbyte_data, 'playable') as playable,
-	JSONExtractString(_airbyte_data, 'ad_group_id') as ad_group_id,
-	JSONExtractString(_airbyte_data, 'custom_event') as custom_event,
-	JSONExtractString(_airbyte_data, 'uniques_video') as uniques_video,
-    JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
-	JSONExtractString(_airbyte_data, 'load_date') as load_date,
-	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
-	toLowCardinality(__table_name) as __table_name,
-	toDateTime32(_airbyte_emitted_at) as __emitted_at,
-	now() as __normalized_at
-from
-	(select *,
-	'travelata.`_airbyte_raw_ad_groups_statistics`' as __table_name 
+    select
+
+	parseDateTime(JSONExtractString(_airbyte_data, 'date'), '%Y-%m-%d %H:%M:%S') AS __datetime,
+
+	JSONExtractString(_airbyte_data, 'tps') as tps,
+
+	JSONExtractString(_airbyte_data, 'spent') as spent,
+
+	JSONExtractString(_airbyte_data, 'shows') as shows,
+
+	JSONExtractString(_airbyte_data, 'clicks') as clicks,
+
+	JSONExtractString(_airbyte_data, 'base') as base,
+
+	JSONExtractString(_airbyte_data, 'date') as date,
+
+	JSONExtractString(_airbyte_data, 'moat') as moat,
+
+	JSONExtractString(_airbyte_data, 'romi') as romi,
+
+	JSONExtractString(_airbyte_data, 'video') as video,
+
+	JSONExtractString(_airbyte_data, 'events') as events,
+
+	JSONExtractString(_airbyte_data, 'uniques') as uniques,
+
+	JSONExtractString(_airbyte_data, 'carousel') as carousel,
+
+	JSONExtractString(_airbyte_data, 'playable') as playable,
+
+	JSONExtractString(_airbyte_data, 'ad_group_id') as ad_group_id,
+
+	JSONExtractString(_airbyte_data, 'custom_event') as custom_event,
+
+	JSONExtractString(_airbyte_data, 'uniques_video') as uniques_video,
+
+    JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
+
+	JSONExtractString(_airbyte_data, 'load_date') as load_date,
+
+	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
+
+	toLowCardinality(__table_name) as __table_name,
+
+	toDateTime32(_airbyte_emitted_at) as __emitted_at,
+
+	now() as __normalized_at
+
+from
+
+	(select *,
+
+	'travelata.`_airbyte_raw_ad_groups_statistics`' as __table_name 
+
 	from travelata.`_airbyte_raw_ad_groups_statistics`) x
   )...
 [0m17:43:13.942695 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -5574,33 +6400,60 @@ from
   create view travelata.normalized_sheets_vkads_adplansstatistics 
   
   as (
-    select
-	parseDateTime(JSONExtractString(_airbyte_data, 'date'), '%Y-%m-%d %H:%M:%S') AS __datetime,
-	JSONExtractString(_airbyte_data, 'tps') as tps,
-	JSONExtractString(_airbyte_data, 'spent') as spent,
-	JSONExtractString(_airbyte_data, 'shows') as shows,
-	JSONExtractString(_airbyte_data, 'clicks') as clicks,
-	JSONExtractString(_airbyte_data, 'base') as base,
-	JSONExtractString(_airbyte_data, 'date') as date,
-	JSONExtractString(_airbyte_data, 'moat') as moat,
-	JSONExtractString(_airbyte_data, 'romi') as romi,
-	JSONExtractString(_airbyte_data, 'video') as video,
-	JSONExtractString(_airbyte_data, 'events') as events,
-	JSONExtractString(_airbyte_data, 'uniques') as uniques,
-	JSONExtractString(_airbyte_data, 'carousel') as carousel,
-	JSONExtractString(_airbyte_data, 'playable') as playable,
-	JSONExtractString(_airbyte_data, 'ad_group_id') as ad_group_id,
-	JSONExtractString(_airbyte_data, 'custom_event') as custom_event,
-	JSONExtractString(_airbyte_data, 'uniques_video') as uniques_video,
-    JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
-	JSONExtractString(_airbyte_data, 'load_date') as load_date,
-	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
-	toLowCardinality(__table_name) as __table_name,
-	toDateTime32(_airbyte_emitted_at) as __emitted_at,
-	now() as __normalized_at
-from
-	(select *,
-	'travelata.`_airbyte_raw_ad_plans_statistics`' as __table_name 
+    select
+
+	parseDateTime(JSONExtractString(_airbyte_data, 'date'), '%Y-%m-%d %H:%M:%S') AS __datetime,
+
+	JSONExtractString(_airbyte_data, 'tps') as tps,
+
+	JSONExtractString(_airbyte_data, 'spent') as spent,
+
+	JSONExtractString(_airbyte_data, 'shows') as shows,
+
+	JSONExtractString(_airbyte_data, 'clicks') as clicks,
+
+	JSONExtractString(_airbyte_data, 'base') as base,
+
+	JSONExtractString(_airbyte_data, 'date') as date,
+
+	JSONExtractString(_airbyte_data, 'moat') as moat,
+
+	JSONExtractString(_airbyte_data, 'romi') as romi,
+
+	JSONExtractString(_airbyte_data, 'video') as video,
+
+	JSONExtractString(_airbyte_data, 'events') as events,
+
+	JSONExtractString(_airbyte_data, 'uniques') as uniques,
+
+	JSONExtractString(_airbyte_data, 'carousel') as carousel,
+
+	JSONExtractString(_airbyte_data, 'playable') as playable,
+
+	JSONExtractString(_airbyte_data, 'ad_group_id') as ad_group_id,
+
+	JSONExtractString(_airbyte_data, 'custom_event') as custom_event,
+
+	JSONExtractString(_airbyte_data, 'uniques_video') as uniques_video,
+
+    JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
+
+	JSONExtractString(_airbyte_data, 'load_date') as load_date,
+
+	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
+
+	toLowCardinality(__table_name) as __table_name,
+
+	toDateTime32(_airbyte_emitted_at) as __emitted_at,
+
+	now() as __normalized_at
+
+from
+
+	(select *,
+
+	'travelata.`_airbyte_raw_ad_plans_statistics`' as __table_name 
+
 	from travelata.`_airbyte_raw_ad_plans_statistics`) x
   )...
 [0m17:43:14.001072 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
@@ -5624,33 +6477,60 @@ from
   create view travelata.normalized_sheets_vkads_bannersstatistics 
   
   as (
-    select
-	parseDateTime(JSONExtractString(_airbyte_data, 'date'), '%Y-%m-%d %H:%M:%S') AS __datetime,
-	JSONExtractString(_airbyte_data, 'tps') as tps,
-	JSONExtractString(_airbyte_data, 'spent') as spent,
-	JSONExtractString(_airbyte_data, 'shows') as shows,
-	JSONExtractString(_airbyte_data, 'clicks') as clicks,
-	JSONExtractString(_airbyte_data, 'base') as base,
-	JSONExtractString(_airbyte_data, 'date') as date,
-	JSONExtractString(_airbyte_data, 'moat') as moat,
-	JSONExtractString(_airbyte_data, 'romi') as romi,
-	JSONExtractString(_airbyte_data, 'video') as video,
-	JSONExtractString(_airbyte_data, 'events') as events,
-	JSONExtractString(_airbyte_data, 'uniques') as uniques,
-	JSONExtractString(_airbyte_data, 'carousel') as carousel,
-	JSONExtractString(_airbyte_data, 'playable') as playable,
-	JSONExtractString(_airbyte_data, 'ad_group_id') as ad_group_id,
-	JSONExtractString(_airbyte_data, 'custom_event') as custom_event,
-	JSONExtractString(_airbyte_data, 'uniques_video') as uniques_video,
-    JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
-	JSONExtractString(_airbyte_data, 'load_date') as load_date,
-	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
-	toLowCardinality(__table_name) as __table_name,
-	toDateTime32(_airbyte_emitted_at) as __emitted_at,
-	now() as __normalized_at
-from
-	(select *,
-	'travelata.`_airbyte_raw_banners_statistics``' as __table_name 
+    select
+
+	parseDateTime(JSONExtractString(_airbyte_data, 'date'), '%Y-%m-%d %H:%M:%S') AS __datetime,
+
+	JSONExtractString(_airbyte_data, 'tps') as tps,
+
+	JSONExtractString(_airbyte_data, 'spent') as spent,
+
+	JSONExtractString(_airbyte_data, 'shows') as shows,
+
+	JSONExtractString(_airbyte_data, 'clicks') as clicks,
+
+	JSONExtractString(_airbyte_data, 'base') as base,
+
+	JSONExtractString(_airbyte_data, 'date') as date,
+
+	JSONExtractString(_airbyte_data, 'moat') as moat,
+
+	JSONExtractString(_airbyte_data, 'romi') as romi,
+
+	JSONExtractString(_airbyte_data, 'video') as video,
+
+	JSONExtractString(_airbyte_data, 'events') as events,
+
+	JSONExtractString(_airbyte_data, 'uniques') as uniques,
+
+	JSONExtractString(_airbyte_data, 'carousel') as carousel,
+
+	JSONExtractString(_airbyte_data, 'playable') as playable,
+
+	JSONExtractString(_airbyte_data, 'ad_group_id') as ad_group_id,
+
+	JSONExtractString(_airbyte_data, 'custom_event') as custom_event,
+
+	JSONExtractString(_airbyte_data, 'uniques_video') as uniques_video,
+
+    JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
+
+	JSONExtractString(_airbyte_data, 'load_date') as load_date,
+
+	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
+
+	toLowCardinality(__table_name) as __table_name,
+
+	toDateTime32(_airbyte_emitted_at) as __emitted_at,
+
+	now() as __normalized_at
+
+from
+
+	(select *,
+
+	'travelata.`_airbyte_raw_banners_statistics``' as __table_name 
+
 	from travelata.`_airbyte_raw_banners_statistics`) x
   )...
 [0m17:43:14.062269 [debug] [Thread-1 (]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
