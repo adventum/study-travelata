@@ -4616,3 +4616,634 @@ drop table if exists travelata.my_second_dbt_model__dbt_backup
 [0m09:05:28.906818 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
 [0m09:05:28.907878 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x05E7A1F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x05EF6D00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11BA0670>]}
 [0m09:05:28.908400 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-10-04 02:32:20.803357 | f59a6fb3-5abf-4840-8cbf-03e1955a4ab2 ==============================
+[0m02:32:20.803357 [info ] [MainThread]: Running with dbt=1.4.8
+[0m02:32:20.832268 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\Татьяна\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m02:32:20.832268 [debug] [MainThread]: Tracking: tracking
+[0m02:32:20.890666 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EEDD37100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EEDD370D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EEDD37D00>]}
+[0m02:32:20.911394 [debug] [MainThread]: checksum: f01b10a6d8b8fec35a0597d95e90748b0c8d809fd4dc5966a395de2efe8a9e99, vars: {}, profile: None, target: None, version: 1.4.8
+[0m02:32:20.929573 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m02:32:20.930574 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EEDD53C10>]}
+[0m02:32:21.994782 [debug] [MainThread]: 1699: static parser successfully parsed 1_normalize\normalized_sheets_appmetrica_events.sql
+[0m02:32:21.994782 [debug] [MainThread]: 1699: static parser successfully parsed 1_normalize\normalized_sheets_appmetrica_install.sql
+[0m02:32:22.010435 [debug] [MainThread]: 1699: static parser successfully parsed 1_normalize\normalized_sheets_appmetrica_profiles.sql
+[0m02:32:22.010435 [debug] [MainThread]: 1699: static parser successfully parsed 1_normalize\normalized_sheets_mytarget_banners.sql
+[0m02:32:22.010435 [debug] [MainThread]: 1699: static parser successfully parsed 1_normalize\normalized_sheets_mytarget_banners_statistics.sql
+[0m02:32:22.010435 [debug] [MainThread]: 1699: static parser successfully parsed 1_normalize\normalized_sheets_mytarget_compaigns.sql
+[0m02:32:22.010435 [debug] [MainThread]: 1699: static parser successfully parsed example\my_first_dbt_model.sql
+[0m02:32:22.026033 [debug] [MainThread]: 1699: static parser successfully parsed example\my_second_dbt_model.sql
+[0m02:32:22.026033 [debug] [MainThread]: 1699: static parser successfully parsed example\test2.sql
+[0m02:32:22.141874 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF10B50D0>]}
+[0m02:32:22.150882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EEDD53640>]}
+[0m02:32:22.150882 [info ] [MainThread]: Found 9 models, 4 tests, 0 snapshots, 0 analyses, 324 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m02:32:22.150882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF0FC19A0>]}
+[0m02:32:22.158331 [info ] [MainThread]: 
+[0m02:32:22.158331 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m02:32:22.158331 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_schemas'
+[0m02:32:22.174984 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:32:44.253022 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_schemas: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "connection_name": "list_schemas"} */
+
+    select name from system.databases
+  ...
+[0m02:32:44.300478 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:44.300478 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_None_travelata'
+[0m02:32:44.316140 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:32:45.007503 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_None_travelata: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "connection_name": "list_None_travelata"} */
+select
+      t.name as name,
+      t.database as schema,
+      if(engine not in ('MaterializedView', 'View'), 'table', 'view') as type,
+      db.engine as db_engine
+    from system.tables as t JOIN system.databases as db on t.database = db.name
+    where schema = 'travelata'
+  ...
+[0m02:32:45.179941 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.17 seconds
+[0m02:32:45.196035 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF10C3B80>]}
+[0m02:32:45.196035 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m02:32:45.196035 [info ] [MainThread]: 
+[0m02:32:45.310382 [debug] [Thread-1  ]: Began running node model.travelata.my_first_dbt_model
+[0m02:32:45.326024 [info ] [Thread-1  ]: 1 of 9 START sql table model travelata.my_first_dbt_model ...................... [RUN]
+[0m02:32:45.326024 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.travelata.my_first_dbt_model'
+[0m02:32:45.326024 [debug] [Thread-1  ]: Began compiling node model.travelata.my_first_dbt_model
+[0m02:32:45.326024 [debug] [Thread-1  ]: Writing injected SQL for node "model.travelata.my_first_dbt_model"
+[0m02:32:45.346737 [debug] [Thread-1  ]: Timing info for model.travelata.my_first_dbt_model (compile): 2023-10-04 02:32:45.326024 => 2023-10-04 02:32:45.346737
+[0m02:32:45.346737 [debug] [Thread-1  ]: Began executing node model.travelata.my_first_dbt_model
+[0m02:32:45.411614 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m02:32:46.056070 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_first_dbt_model"} */
+
+            
+
+    
+        create table travelata.my_first_dbt_model__dbt_backup
+        
+  
+        
+  engine = MergeTree()
+        
+      order by (tuple())
+        
+        
+        
+        empty
+    as (
+        /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+        ...
+[0m02:32:46.134696 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m02:32:46.150288 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_first_dbt_model"} */
+
+    select name, type from system.columns where table = 'my_first_dbt_model__dbt_backup'
+    
+      and database = 'travelata'
+    
+    order by position
+  ...
+[0m02:32:46.165914 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m02:32:46.165914 [debug] [Thread-1  ]: Writing runtime sql for node "model.travelata.my_first_dbt_model"
+[0m02:32:46.165914 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_first_dbt_model"} */
+
+  
+    
+    
+        
+        insert into travelata.my_first_dbt_model__dbt_backup ("id")
+  /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  ...
+[0m02:32:46.260596 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.09 seconds
+[0m02:32:46.260596 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_first_dbt_model"} */
+EXCHANGE TABLES travelata.my_first_dbt_model__dbt_backup AND travelata.my_first_dbt_model 
+  
+  ...
+[0m02:32:46.355004 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.09 seconds
+[0m02:32:46.391728 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_first_dbt_model"} */
+drop table if exists travelata.my_first_dbt_model__dbt_backup 
+  ...
+[0m02:32:46.480444 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.09 seconds
+[0m02:32:46.480444 [debug] [Thread-1  ]: Timing info for model.travelata.my_first_dbt_model (execute): 2023-10-04 02:32:45.346737 => 2023-10-04 02:32:46.480444
+[0m02:32:46.480444 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF0FB7B80>]}
+[0m02:32:46.480444 [info ] [Thread-1  ]: 1 of 9 OK created sql table model travelata.my_first_dbt_model ................. [[32mOK[0m in 1.15s]
+[0m02:32:46.480444 [debug] [Thread-1  ]: Finished running node model.travelata.my_first_dbt_model
+[0m02:32:46.480444 [debug] [Thread-1  ]: Began running node model.travelata.normalized_sheets_appmetrica_events
+[0m02:32:46.480444 [info ] [Thread-1  ]: 2 of 9 START sql view model travelata.normalized_sheets_appmetrica_events ...... [RUN]
+[0m02:32:46.491982 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.travelata.normalized_sheets_appmetrica_events'
+[0m02:32:46.491982 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.travelata.normalized_sheets_appmetrica_events)
+[0m02:32:46.491982 [debug] [Thread-1  ]: Began compiling node model.travelata.normalized_sheets_appmetrica_events
+[0m02:32:46.491982 [debug] [Thread-1  ]: Writing injected SQL for node "model.travelata.normalized_sheets_appmetrica_events"
+[0m02:32:46.496488 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_appmetrica_events (compile): 2023-10-04 02:32:46.491982 => 2023-10-04 02:32:46.496488
+[0m02:32:46.496488 [debug] [Thread-1  ]: Began executing node model.travelata.normalized_sheets_appmetrica_events
+[0m02:32:46.515425 [debug] [Thread-1  ]: Writing runtime sql for node "model.travelata.normalized_sheets_appmetrica_events"
+[0m02:32:46.515425 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_events: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_events"} */
+
+
+  create view travelata.normalized_sheets_appmetrica_events__dbt_tmp 
+  
+  as (
+    SELECT
+parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+JSONExtractString(_airbyte_data, 'event_json') AS event_json,
+JSONExtractString(_airbyte_data, 'event_name') AS event_name,
+JSONExtractString(_airbyte_data, 'installation_id') AS installation_id,
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+JSONExtractString(_airbyte_data, 'city') AS city,
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+JSONExtractString(_airbyte_data, 'app_version_name') AS app_version_name,
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+toLowCardinality(__table_name) AS __table_name,
+NOW() as __normalized_at
+FROM 
+(
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
+from travelata._airbyte_raw_sheets_appmetrica_travelata_events
+)
+  )...
+[0m02:32:46.591853 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m02:32:46.594937 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_events: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_events"} */
+
+    drop table if exists travelata.normalized_sheets_appmetrica_events__dbt_backup 
+  
+  ...
+[0m02:32:46.641818 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:46.641818 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_events: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_events"} */
+
+    rename table travelata.normalized_sheets_appmetrica_events to travelata.normalized_sheets_appmetrica_events__dbt_backup 
+  
+  ...
+[0m02:32:46.691789 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:46.705332 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_events: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_events"} */
+
+    drop table if exists travelata.normalized_sheets_appmetrica_events 
+  
+  ...
+[0m02:32:46.767585 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m02:32:46.767585 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_events: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_events"} */
+
+    rename table travelata.normalized_sheets_appmetrica_events__dbt_tmp to travelata.normalized_sheets_appmetrica_events 
+  
+  ...
+[0m02:32:46.846364 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m02:32:46.861955 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_events: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_events"} */
+drop table if exists travelata.normalized_sheets_appmetrica_events__dbt_backup 
+  ...
+[0m02:32:46.924942 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m02:32:46.940567 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_appmetrica_events (execute): 2023-10-04 02:32:46.496488 => 2023-10-04 02:32:46.940567
+[0m02:32:46.940567 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF2596310>]}
+[0m02:32:46.940567 [info ] [Thread-1  ]: 2 of 9 OK created sql view model travelata.normalized_sheets_appmetrica_events . [[32mOK[0m in 0.46s]
+[0m02:32:46.940567 [debug] [Thread-1  ]: Finished running node model.travelata.normalized_sheets_appmetrica_events
+[0m02:32:46.940567 [debug] [Thread-1  ]: Began running node model.travelata.normalized_sheets_appmetrica_install
+[0m02:32:46.940567 [info ] [Thread-1  ]: 3 of 9 START sql view model travelata.normalized_sheets_appmetrica_install ..... [RUN]
+[0m02:32:46.940567 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.travelata.normalized_sheets_appmetrica_install'
+[0m02:32:46.954815 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.travelata.normalized_sheets_appmetrica_install)
+[0m02:32:46.954815 [debug] [Thread-1  ]: Began compiling node model.travelata.normalized_sheets_appmetrica_install
+[0m02:32:46.956264 [debug] [Thread-1  ]: Writing injected SQL for node "model.travelata.normalized_sheets_appmetrica_install"
+[0m02:32:46.963185 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_appmetrica_install (compile): 2023-10-04 02:32:46.955834 => 2023-10-04 02:32:46.963185
+[0m02:32:46.963185 [debug] [Thread-1  ]: Began executing node model.travelata.normalized_sheets_appmetrica_install
+[0m02:32:46.963185 [debug] [Thread-1  ]: Writing runtime sql for node "model.travelata.normalized_sheets_appmetrica_install"
+[0m02:32:46.963185 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_install: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_install"} */
+
+
+  create view travelata.normalized_sheets_appmetrica_install__dbt_tmp 
+  
+  as (
+    SELECT 
+parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+JSONExtractString(_airbyte_data, 'city') AS city,
+JSONExtractString(_airbyte_data, 'os_name') AS os_name,
+JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+JSONExtractString(_airbyte_data, 'click_datetime') AS click_datetime,
+JSONExtractString(_airbyte_data, 'install_datetime') AS install_datetime,
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+JSONExtractString(_airbyte_data, 'click_url_parameters') AS click_url_parameters,
+JSONExtractString(_airbyte_data, 'is_reinstallation') AS is_reinstallation,
+JSONExtractString(_airbyte_data, 'publisher_name') AS publisher_name,
+JSONExtractString(_airbyte_data, 'ios_ifa') AS ios_ifa,
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+toLowCardinality(__table_name) AS __table_name,
+NOW() as __normalized_at
+FROM 
+(
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_install' as __table_name
+from travelata._airbyte_raw_sheets_appmetrica_travelata_install
+)
+  )...
+[0m02:32:47.029509 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m02:32:47.033513 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_install: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_install"} */
+
+    drop table if exists travelata.normalized_sheets_appmetrica_install__dbt_backup 
+  
+  ...
+[0m02:32:47.094622 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m02:32:47.094622 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_install: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_install"} */
+
+    rename table travelata.normalized_sheets_appmetrica_install to travelata.normalized_sheets_appmetrica_install__dbt_backup 
+  
+  ...
+[0m02:32:47.141557 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:47.157163 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_install: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_install"} */
+
+    drop table if exists travelata.normalized_sheets_appmetrica_install 
+  
+  ...
+[0m02:32:47.204550 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:47.204550 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_install: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_install"} */
+
+    rename table travelata.normalized_sheets_appmetrica_install__dbt_tmp to travelata.normalized_sheets_appmetrica_install 
+  
+  ...
+[0m02:32:47.251430 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:47.267059 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_install: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_install"} */
+drop table if exists travelata.normalized_sheets_appmetrica_install__dbt_backup 
+  ...
+[0m02:32:47.314512 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:47.314512 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_appmetrica_install (execute): 2023-10-04 02:32:46.963185 => 2023-10-04 02:32:47.314512
+[0m02:32:47.314512 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF25A0B20>]}
+[0m02:32:47.314512 [info ] [Thread-1  ]: 3 of 9 OK created sql view model travelata.normalized_sheets_appmetrica_install  [[32mOK[0m in 0.37s]
+[0m02:32:47.330138 [debug] [Thread-1  ]: Finished running node model.travelata.normalized_sheets_appmetrica_install
+[0m02:32:47.330138 [debug] [Thread-1  ]: Began running node model.travelata.normalized_sheets_appmetrica_profiles
+[0m02:32:47.330138 [info ] [Thread-1  ]: 4 of 9 START sql view model travelata.normalized_sheets_appmetrica_profiles .... [RUN]
+[0m02:32:47.330138 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.travelata.normalized_sheets_appmetrica_profiles'
+[0m02:32:47.330138 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.travelata.normalized_sheets_appmetrica_profiles)
+[0m02:32:47.330138 [debug] [Thread-1  ]: Began compiling node model.travelata.normalized_sheets_appmetrica_profiles
+[0m02:32:47.330138 [debug] [Thread-1  ]: Writing injected SQL for node "model.travelata.normalized_sheets_appmetrica_profiles"
+[0m02:32:47.330138 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_appmetrica_profiles (compile): 2023-10-04 02:32:47.330138 => 2023-10-04 02:32:47.330138
+[0m02:32:47.330138 [debug] [Thread-1  ]: Began executing node model.travelata.normalized_sheets_appmetrica_profiles
+[0m02:32:47.330138 [debug] [Thread-1  ]: Creating new relation normalized_sheets_appmetrica_profiles
+[0m02:32:47.330138 [debug] [Thread-1  ]: Writing runtime sql for node "model.travelata.normalized_sheets_appmetrica_profiles"
+[0m02:32:47.330138 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_appmetrica_profiles: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_appmetrica_profiles"} */
+
+
+  create view travelata.normalized_sheets_appmetrica_profiles 
+  
+  as (
+    SELECT 
+JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
+JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
+JSONExtractString(_airbyte_data, 'mp_card_number') AS mp_card_number,
+JSONExtractString(_airbyte_data, 'city_code') AS city_code,
+toDateTime32(_airbyte_emitted_at) AS __emitted_at,
+toLowCardinality(__table_name) AS __table_name,
+NOW() as __normalized_at
+FROM 
+(
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_profiles' as __table_name
+from travelata._airbyte_raw_sheets_appmetrica_travelata_profiles
+)
+  )...
+[0m02:32:47.398227 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m02:32:47.398227 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_appmetrica_profiles (execute): 2023-10-04 02:32:47.330138 => 2023-10-04 02:32:47.398227
+[0m02:32:47.398227 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF25967F0>]}
+[0m02:32:47.398227 [info ] [Thread-1  ]: 4 of 9 OK created sql view model travelata.normalized_sheets_appmetrica_profiles  [[32mOK[0m in 0.07s]
+[0m02:32:47.398227 [debug] [Thread-1  ]: Finished running node model.travelata.normalized_sheets_appmetrica_profiles
+[0m02:32:47.398227 [debug] [Thread-1  ]: Began running node model.travelata.normalized_sheets_mytarget_banners
+[0m02:32:47.412571 [info ] [Thread-1  ]: 5 of 9 START sql view model travelata.normalized_sheets_mytarget_banners ....... [RUN]
+[0m02:32:47.413718 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.travelata.normalized_sheets_mytarget_banners'
+[0m02:32:47.413718 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.travelata.normalized_sheets_mytarget_banners)
+[0m02:32:47.413718 [debug] [Thread-1  ]: Began compiling node model.travelata.normalized_sheets_mytarget_banners
+[0m02:32:47.413718 [debug] [Thread-1  ]: Writing injected SQL for node "model.travelata.normalized_sheets_mytarget_banners"
+[0m02:32:47.413718 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_mytarget_banners (compile): 2023-10-04 02:32:47.413718 => 2023-10-04 02:32:47.413718
+[0m02:32:47.413718 [debug] [Thread-1  ]: Began executing node model.travelata.normalized_sheets_mytarget_banners
+[0m02:32:47.413718 [debug] [Thread-1  ]: Writing runtime sql for node "model.travelata.normalized_sheets_mytarget_banners"
+[0m02:32:47.413718 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners"} */
+
+
+  create view travelata.normalized_sheets_mytarget_banners__dbt_tmp 
+  
+  as (
+    SELECT 
+JSONExtractString(`_airbyte_data`,'campaign_id') as campagin_id,
+JSONExtractString(`_airbyte_data`,'id') as id,
+JSONExtractString(`_airbyte_data`,'textblocks') as textblocks,
+JSONExtractString(`_airbyte_data`,'urls') as urls,
+JSONExtractString(`_airbyte_data`,'_airbyte_ab_id') as airbyte_ab_id,
+toLowCardinality(table_name) as table_name,
+toDateTime32(_airbyte_emitted_at) as _emitted_at,
+now() as _normalized_at 
+from
+(select *,'travelata._airbyte_raw_sheets_mytarget_travelata_normalize_mt_banners' as table_name
+from travelata.`_airbyte_raw_sheets_mytarget_travelata_normalize_mt_banners`)
+  )...
+[0m02:32:47.497250 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m02:32:47.513686 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners"} */
+
+    drop table if exists travelata.normalized_sheets_mytarget_banners__dbt_backup 
+  
+  ...
+[0m02:32:47.561656 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:47.561656 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners"} */
+
+    rename table travelata.normalized_sheets_mytarget_banners to travelata.normalized_sheets_mytarget_banners__dbt_backup 
+  
+  ...
+[0m02:32:47.624249 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m02:32:47.639892 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners"} */
+
+    drop table if exists travelata.normalized_sheets_mytarget_banners 
+  
+  ...
+[0m02:32:47.693293 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:47.693293 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners"} */
+
+    rename table travelata.normalized_sheets_mytarget_banners__dbt_tmp to travelata.normalized_sheets_mytarget_banners 
+  
+  ...
+[0m02:32:47.753701 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m02:32:47.759384 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners"} */
+drop table if exists travelata.normalized_sheets_mytarget_banners__dbt_backup 
+  ...
+[0m02:32:47.797359 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.04 seconds
+[0m02:32:47.797359 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_mytarget_banners (execute): 2023-10-04 02:32:47.413718 => 2023-10-04 02:32:47.797359
+[0m02:32:47.797359 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF258B4C0>]}
+[0m02:32:47.797359 [info ] [Thread-1  ]: 5 of 9 OK created sql view model travelata.normalized_sheets_mytarget_banners .. [[32mOK[0m in 0.38s]
+[0m02:32:47.797359 [debug] [Thread-1  ]: Finished running node model.travelata.normalized_sheets_mytarget_banners
+[0m02:32:47.797359 [debug] [Thread-1  ]: Began running node model.travelata.normalized_sheets_mytarget_banners_statistics
+[0m02:32:47.797359 [info ] [Thread-1  ]: 6 of 9 START sql view model travelata.normalized_sheets_mytarget_banners_statistics  [RUN]
+[0m02:32:47.797359 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.travelata.normalized_sheets_mytarget_banners_statistics'
+[0m02:32:47.797359 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.travelata.normalized_sheets_mytarget_banners_statistics)
+[0m02:32:47.797359 [debug] [Thread-1  ]: Began compiling node model.travelata.normalized_sheets_mytarget_banners_statistics
+[0m02:32:47.797359 [debug] [Thread-1  ]: Writing injected SQL for node "model.travelata.normalized_sheets_mytarget_banners_statistics"
+[0m02:32:47.813604 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_mytarget_banners_statistics (compile): 2023-10-04 02:32:47.797359 => 2023-10-04 02:32:47.813604
+[0m02:32:47.813604 [debug] [Thread-1  ]: Began executing node model.travelata.normalized_sheets_mytarget_banners_statistics
+[0m02:32:47.818196 [debug] [Thread-1  ]: Writing runtime sql for node "model.travelata.normalized_sheets_mytarget_banners_statistics"
+[0m02:32:47.818196 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners_statistics: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners_statistics"} */
+
+
+  create view travelata.normalized_sheets_mytarget_banners_statistics__dbt_tmp 
+  
+  as (
+    SELECT 
+--parseDateTime(JSONExtractString(`_airbyte_data`,'date'))as _datetime,
+JSONExtractString(`_airbyte_data`,'date') as date,
+JSONExtractString(`_airbyte_data`,'shows') as shows,
+JSONExtractString(`_airbyte_data`,'clicks') as clics,
+JSONExtractString(`_airbyte_data`,'goals') as goals,
+JSONExtractString(`_airbyte_data`,'spent') as spent,
+JSONExtractString(`_airbyte_data`,'_banner_id') as banner_id,
+JSONExtractString(`_airbyte_data`,'_airbyte_ab_id') as airbyte_ab_id,
+toLowCardinality(table_name) as table_name,
+toDateTime32(_airbyte_emitted_at) as _emitted_at,
+now() as _normalized_at 
+from
+(select *,'travelata._airbyte_raw_sheets_mytarget_travelata_normalize_mt_banners_statistics' as table_name
+from travelata.`_airbyte_raw_sheets_mytarget_travelata_normalize_mt_banners_statistics`)
+  )...
+[0m02:32:47.900280 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m02:32:47.905311 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners_statistics: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners_statistics"} */
+
+    drop table if exists travelata.normalized_sheets_mytarget_banners_statistics__dbt_backup 
+  
+  ...
+[0m02:32:47.946010 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.04 seconds
+[0m02:32:47.946010 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners_statistics: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners_statistics"} */
+
+    rename table travelata.normalized_sheets_mytarget_banners_statistics to travelata.normalized_sheets_mytarget_banners_statistics__dbt_backup 
+  
+  ...
+[0m02:32:48.024565 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.08 seconds
+[0m02:32:48.040222 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners_statistics: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners_statistics"} */
+
+    drop table if exists travelata.normalized_sheets_mytarget_banners_statistics 
+  
+  ...
+[0m02:32:48.103205 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m02:32:48.103205 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners_statistics: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners_statistics"} */
+
+    rename table travelata.normalized_sheets_mytarget_banners_statistics__dbt_tmp to travelata.normalized_sheets_mytarget_banners_statistics 
+  
+  ...
+[0m02:32:48.150179 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:48.165744 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_banners_statistics: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_banners_statistics"} */
+drop table if exists travelata.normalized_sheets_mytarget_banners_statistics__dbt_backup 
+  ...
+[0m02:32:48.213117 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:48.213117 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_mytarget_banners_statistics (execute): 2023-10-04 02:32:47.814676 => 2023-10-04 02:32:48.213117
+[0m02:32:48.213117 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF25AA220>]}
+[0m02:32:48.213117 [info ] [Thread-1  ]: 6 of 9 OK created sql view model travelata.normalized_sheets_mytarget_banners_statistics  [[32mOK[0m in 0.42s]
+[0m02:32:48.213117 [debug] [Thread-1  ]: Finished running node model.travelata.normalized_sheets_mytarget_banners_statistics
+[0m02:32:48.213117 [debug] [Thread-1  ]: Began running node model.travelata.normalized_sheets_mytarget_compaigns
+[0m02:32:48.213117 [info ] [Thread-1  ]: 7 of 9 START sql view model travelata.normalized_sheets_mytarget_compaigns ..... [RUN]
+[0m02:32:48.213117 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.travelata.normalized_sheets_mytarget_compaigns'
+[0m02:32:48.213117 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.travelata.normalized_sheets_mytarget_compaigns)
+[0m02:32:48.213117 [debug] [Thread-1  ]: Began compiling node model.travelata.normalized_sheets_mytarget_compaigns
+[0m02:32:48.231431 [debug] [Thread-1  ]: Writing injected SQL for node "model.travelata.normalized_sheets_mytarget_compaigns"
+[0m02:32:48.233432 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_mytarget_compaigns (compile): 2023-10-04 02:32:48.213117 => 2023-10-04 02:32:48.232429
+[0m02:32:48.233432 [debug] [Thread-1  ]: Began executing node model.travelata.normalized_sheets_mytarget_compaigns
+[0m02:32:48.236512 [debug] [Thread-1  ]: Writing runtime sql for node "model.travelata.normalized_sheets_mytarget_compaigns"
+[0m02:32:48.236512 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_compaigns: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_compaigns"} */
+
+
+  create view travelata.normalized_sheets_mytarget_compaigns__dbt_tmp 
+  
+  as (
+    SELECT 
+JSONExtractString(`_airbyte_data`,'id') as id,
+JSONExtractString(`_airbyte_data`,'name') as name,
+JSONExtractString(`_airbyte_data`,'_airbyte_ab_id') as airbyte_ab_id,
+toLowCardinality(table_name) as table_name,
+toDateTime32(_airbyte_emitted_at) as _emitted_at,
+now() as _normalized_at 
+from
+(select *,'travelata._airbyte_raw_sheets_mytarget_travelata_normalize_mt_compaigns' as table_name
+from travelata.`_airbyte_raw_sheets_mytarget_travelata_normalize_mt_compaigns`)
+  )...
+[0m02:32:48.305581 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m02:32:48.311282 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_compaigns: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_compaigns"} */
+
+    drop table if exists travelata.normalized_sheets_mytarget_compaigns__dbt_backup 
+  
+  ...
+[0m02:32:48.376340 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.07 seconds
+[0m02:32:48.376340 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_compaigns: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_compaigns"} */
+
+    rename table travelata.normalized_sheets_mytarget_compaigns to travelata.normalized_sheets_mytarget_compaigns__dbt_backup 
+  
+  ...
+[0m02:32:48.423698 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:48.423698 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_compaigns: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_compaigns"} */
+
+    drop table if exists travelata.normalized_sheets_mytarget_compaigns 
+  
+  ...
+[0m02:32:48.470575 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:48.470575 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_compaigns: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_compaigns"} */
+
+    rename table travelata.normalized_sheets_mytarget_compaigns__dbt_tmp to travelata.normalized_sheets_mytarget_compaigns 
+  
+  ...
+[0m02:32:48.533573 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m02:32:48.533573 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.normalized_sheets_mytarget_compaigns: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.normalized_sheets_mytarget_compaigns"} */
+drop table if exists travelata.normalized_sheets_mytarget_compaigns__dbt_backup 
+  ...
+[0m02:32:48.580453 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:48.596511 [debug] [Thread-1  ]: Timing info for model.travelata.normalized_sheets_mytarget_compaigns (execute): 2023-10-04 02:32:48.234430 => 2023-10-04 02:32:48.596511
+[0m02:32:48.596511 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF0FC1490>]}
+[0m02:32:48.596511 [info ] [Thread-1  ]: 7 of 9 OK created sql view model travelata.normalized_sheets_mytarget_compaigns  [[32mOK[0m in 0.38s]
+[0m02:32:48.596511 [debug] [Thread-1  ]: Finished running node model.travelata.normalized_sheets_mytarget_compaigns
+[0m02:32:48.596511 [debug] [Thread-1  ]: Began running node model.travelata.test2
+[0m02:32:48.596511 [info ] [Thread-1  ]: 8 of 9 START sql view model travelata.test2 .................................... [RUN]
+[0m02:32:48.596511 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.travelata.test2'
+[0m02:32:48.596511 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.travelata.test2)
+[0m02:32:48.596511 [debug] [Thread-1  ]: Began compiling node model.travelata.test2
+[0m02:32:48.596511 [debug] [Thread-1  ]: Writing injected SQL for node "model.travelata.test2"
+[0m02:32:48.596511 [debug] [Thread-1  ]: Timing info for model.travelata.test2 (compile): 2023-10-04 02:32:48.596511 => 2023-10-04 02:32:48.596511
+[0m02:32:48.596511 [debug] [Thread-1  ]: Began executing node model.travelata.test2
+[0m02:32:48.596511 [debug] [Thread-1  ]: Creating new relation test2
+[0m02:32:48.612175 [debug] [Thread-1  ]: Writing runtime sql for node "model.travelata.test2"
+[0m02:32:48.613397 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.test2: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.test2"} */
+
+
+  create view travelata.test2 
+  
+  as (
+    hello
+  )...
+[0m02:32:48.706849 [debug] [Thread-1  ]: dbt_clickhouse adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.test2"} */
+
+
+  create view travelata.test2 
+  
+  as (
+    hello
+  )
+[0m02:32:48.707849 [debug] [Thread-1  ]: Timing info for model.travelata.test2 (execute): 2023-10-04 02:32:48.596511 => 2023-10-04 02:32:48.707849
+[0m02:32:48.936505 [debug] [Thread-1  ]: Database Error in model test2 (models\example\test2.sql)
+  :HTTPDriver for http://localhost:8123 returned response code 400)
+   Code: 62. DB::Exception: Syntax error: failed at position 180 ('hello') (line 7, col 5): hello
+    ). Expected one of: SELECT query, possibly with UNION, list of union elements, SELECT query, subquery, possibly with UNION, SELECT subquery, SELECT query, WITH, FROM, SELECT, EXPLAIN. (SYNTAX_ERROR) (version 23.3.13.6 (official build))
+  compiled Code at target\run\travelata\models\example\test2.sql
+[0m02:32:48.936505 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF35F5E20>]}
+[0m02:32:48.936505 [error] [Thread-1  ]: 8 of 9 ERROR creating sql view model travelata.test2 ........................... [[31mERROR[0m in 0.34s]
+[0m02:32:48.936505 [debug] [Thread-1  ]: Finished running node model.travelata.test2
+[0m02:32:48.936505 [debug] [Thread-1  ]: Began running node model.travelata.my_second_dbt_model
+[0m02:32:48.936505 [info ] [Thread-1  ]: 9 of 9 START sql view model travelata.my_second_dbt_model ...................... [RUN]
+[0m02:32:48.936505 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.travelata.my_second_dbt_model'
+[0m02:32:48.936505 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.travelata.my_second_dbt_model)
+[0m02:32:48.936505 [debug] [Thread-1  ]: Began compiling node model.travelata.my_second_dbt_model
+[0m02:32:48.936505 [debug] [Thread-1  ]: Writing injected SQL for node "model.travelata.my_second_dbt_model"
+[0m02:32:48.936505 [debug] [Thread-1  ]: Timing info for model.travelata.my_second_dbt_model (compile): 2023-10-04 02:32:48.936505 => 2023-10-04 02:32:48.936505
+[0m02:32:48.936505 [debug] [Thread-1  ]: Began executing node model.travelata.my_second_dbt_model
+[0m02:32:48.936505 [debug] [Thread-1  ]: Writing runtime sql for node "model.travelata.my_second_dbt_model"
+[0m02:32:48.953505 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_second_dbt_model"} */
+
+
+  create view travelata.my_second_dbt_model__dbt_tmp 
+  
+  as (
+    -- Use the `ref` function to select from other models
+
+select *
+from travelata.my_first_dbt_model
+where id = 1
+  )...
+[0m02:32:48.968018 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m02:32:48.972018 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_second_dbt_model"} */
+
+    drop table if exists travelata.my_second_dbt_model__dbt_backup 
+  
+  ...
+[0m02:32:49.014018 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.04 seconds
+[0m02:32:49.014018 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_second_dbt_model"} */
+
+    rename table travelata.my_second_dbt_model to travelata.my_second_dbt_model__dbt_backup 
+  
+  ...
+[0m02:32:49.073541 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m02:32:49.076541 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_second_dbt_model"} */
+
+    drop table if exists travelata.my_second_dbt_model 
+  
+  ...
+[0m02:32:49.129562 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m02:32:49.129562 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_second_dbt_model"} */
+
+    rename table travelata.my_second_dbt_model__dbt_tmp to travelata.my_second_dbt_model 
+  
+  ...
+[0m02:32:49.192525 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.06 seconds
+[0m02:32:49.198420 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.my_second_dbt_model"} */
+drop table if exists travelata.my_second_dbt_model__dbt_backup 
+  ...
+[0m02:32:49.239346 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.04 seconds
+[0m02:32:49.239346 [debug] [Thread-1  ]: Timing info for model.travelata.my_second_dbt_model (execute): 2023-10-04 02:32:48.936505 => 2023-10-04 02:32:49.239346
+[0m02:32:49.239346 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59a6fb3-5abf-4840-8cbf-03e1955a4ab2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF3672940>]}
+[0m02:32:49.239346 [info ] [Thread-1  ]: 9 of 9 OK created sql view model travelata.my_second_dbt_model ................. [[32mOK[0m in 0.30s]
+[0m02:32:49.239346 [debug] [Thread-1  ]: Finished running node model.travelata.my_second_dbt_model
+[0m02:32:49.264590 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m02:32:49.264590 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:32:49.264590 [debug] [MainThread]: Connection 'list_schemas' was left open.
+[0m02:32:49.264590 [debug] [MainThread]: On list_schemas: Close
+[0m02:32:49.264590 [debug] [MainThread]: Connection 'list_None_travelata' was left open.
+[0m02:32:49.264590 [debug] [MainThread]: On list_None_travelata: Close
+[0m02:32:49.264590 [debug] [MainThread]: Connection 'model.travelata.my_second_dbt_model' was left open.
+[0m02:32:49.264590 [debug] [MainThread]: On model.travelata.my_second_dbt_model: Close
+[0m02:32:49.279886 [info ] [MainThread]: 
+[0m02:32:49.280906 [info ] [MainThread]: Finished running 1 table model, 8 view models in 0 hours 0 minutes and 27.12 seconds (27.12s).
+[0m02:32:49.282893 [debug] [MainThread]: Command end result
+[0m02:32:49.285185 [info ] [MainThread]: 
+[0m02:32:49.285185 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m02:32:49.285185 [info ] [MainThread]: 
+[0m02:32:49.285185 [error] [MainThread]: [33mDatabase Error in model test2 (models\example\test2.sql)[0m
+[0m02:32:49.295690 [error] [MainThread]:   :HTTPDriver for http://localhost:8123 returned response code 400)
+[0m02:32:49.295690 [error] [MainThread]:    Code: 62. DB::Exception: Syntax error: failed at position 180 ('hello') (line 7, col 5): hello
+[0m02:32:49.297523 [error] [MainThread]:     ). Expected one of: SELECT query, possibly with UNION, list of union elements, SELECT query, subquery, possibly with UNION, SELECT subquery, SELECT query, WITH, FROM, SELECT, EXPLAIN. (SYNTAX_ERROR) (version 23.3.13.6 (official build))
+[0m02:32:49.298531 [error] [MainThread]:   compiled Code at target\run\travelata\models\example\test2.sql
+[0m02:32:49.299529 [info ] [MainThread]: 
+[0m02:32:49.300530 [info ] [MainThread]: Done. PASS=8 WARN=0 ERROR=1 SKIP=0 TOTAL=9
+[0m02:32:49.301640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EF35DDE80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EEDD0EBE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016EEDD0E610>]}
+[0m02:32:49.301640 [debug] [MainThread]: Flushing usage events

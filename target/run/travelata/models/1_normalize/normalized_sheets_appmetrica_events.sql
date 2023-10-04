@@ -1,6 +1,6 @@
 
 
-  create view travelata.normalized_sheets_appmetrica_events 
+  create view travelata.normalized_sheets_appmetrica_events__dbt_tmp 
   
   as (
     SELECT
