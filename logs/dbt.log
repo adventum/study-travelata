@@ -6668,3 +6668,39 @@ drop table if exists travelata.my_second_dbt_model__dbt_backup
 [0m17:43:14.487348 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=5 SKIP=0 TOTAL=10
 [0m17:43:14.490348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AA8CFCD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AA8E05610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AA8A5E710>]}
 [0m17:43:14.491342 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-10-04 10:57:13.532790 | 3342ba5a-f8eb-427e-9749-fffbdde5af3e ==============================
+[0m10:57:13.532790 [info ] [MainThread]: Running with dbt=1.4.8
+[0m10:57:13.532790 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\Dmitriy\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m10:57:13.532790 [debug] [MainThread]: Tracking: tracking
+[0m10:57:13.548409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025DC26D9160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025DC26D9130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025DC26D9EE0>]}
+[0m10:57:13.564965 [debug] [MainThread]: checksum: f01b10a6d8b8fec35a0597d95e90748b0c8d809fd4dc5966a395de2efe8a9e99, vars: {}, profile: None, target: None, version: 1.4.8
+[0m10:57:13.673615 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:57:13.673615 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:57:13.673615 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.travelata.example
+[0m10:57:13.673615 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3342ba5a-f8eb-427e-9749-fffbdde5af3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025DC5A6DEE0>]}
+[0m10:57:13.701087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3342ba5a-f8eb-427e-9749-fffbdde5af3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025DC59B2B20>]}
+[0m10:57:13.701087 [info ] [MainThread]: Found 16 models, 0 tests, 0 snapshots, 0 analyses, 324 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m10:57:13.704603 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3342ba5a-f8eb-427e-9749-fffbdde5af3e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025DC59B2D90>]}
+[0m10:57:13.704603 [info ] [MainThread]: 
+[0m10:57:13.710583 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m10:57:13.710583 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_schemas'
+[0m10:57:13.724326 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:57:23.005668 [debug] [ThreadPool]: dbt_clickhouse adapter: Got a retryable error when attempting to open a clickhouse connection.
+1 attempts remaining. Retrying in 1 seconds.
+Error:
+Error HTTPConnectionPool(host='localhost', port=8123): Max retries exceeded with url: /?wait_end_of_query=1 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000025DC6D4F940>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')) executing HTTP request attempt 1 http://localhost:8123
+[0m10:57:32.113061 [debug] [ThreadPool]: dbt_clickhouse adapter: Error running SQL: macro list_schemas
+[0m10:57:32.113061 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:57:32.113061 [debug] [MainThread]: Connection 'list_schemas' was left open.
+[0m10:57:32.113061 [debug] [MainThread]: On list_schemas: No close available on handle
+[0m10:57:32.113061 [info ] [MainThread]: 
+[0m10:57:32.113061 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 18.40 seconds (18.40s).
+[0m10:57:32.121049 [error] [MainThread]: Encountered an error:
+Database Error
+  Error HTTPConnectionPool(host='localhost', port=8123): Max retries exceeded with url: /?wait_end_of_query=1 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000025DC6D4FD30>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')) executing HTTP request attempt 1 http://localhost:8123
+[0m10:57:32.124066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025DC5981130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025DC6D4FEE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025DC6D4FF10>]}
+[0m10:57:32.124066 [debug] [MainThread]: Flushing usage events
