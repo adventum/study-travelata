@@ -1,6 +1,6 @@
 SELECT 
 --parseDateTime(JSONExtractString(`_airbyte_data`,'date'))as _datetime,
-JSONExtractString(`_airbyte_data`,'date') as date,
+JSONExtractString(`_airbyte_data`,'date') as _date,
 JSONExtractString(`_airbyte_data`,'shows') as shows,
 JSONExtractString(`_airbyte_data`,'clicks') as clics,
 JSONExtractString(`_airbyte_data`,'goals') as goals,
