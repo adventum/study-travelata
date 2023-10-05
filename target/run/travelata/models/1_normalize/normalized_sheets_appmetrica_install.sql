@@ -1,10 +1,10 @@
 
 
-  create view travelata.normalized_sheets_appmetrica_install 
+  create view travelata.normalized_sheets_appmetrica_install__dbt_tmp 
   
   as (
     SELECT 
-parseDateTime(JSONExtractString(_airbyte_data, 'install_datetime'), '%d.%m.%Y') AS __datetime,
+JSONExtractString(_airbyte_data, 'install_datetime') AS __datetime,
 JSONExtractString(_airbyte_data, 'city') AS city,
 JSONExtractString(_airbyte_data, 'os_name') AS os_name,
 JSONExtractString(_airbyte_data, 'google_aid') AS google_aid,

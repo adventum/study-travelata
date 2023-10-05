@@ -24,5 +24,5 @@ select
 	now() as __normalized_at
 from
 	(select *,
-	'travelata.`_airbyte_raw_banners_statistics``' as __table_name 
-	from travelata.`_airbyte_raw_banners_statistics`) x
+	'travelata.`_airbyte_raw_sheets_vkads_travelata_banners_statistics`' as __table_name 
+	from travelata.`_airbyte_raw_sheets_vkads_travelata_banners_statistics`) x

@@ -1,6 +1,6 @@
 
 
-  create view travelata.normalized_sheets_utmcraft_utmresult 
+  create view travelata.normalized_sheets_utmcraft_utmresult__dbt_tmp 
   
   as (
     select
@@ -15,12 +15,11 @@
 	JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,
 	JSONExtractString(_airbyte_data, 'load_date') as load_date,
 	JSONExtractString(_airbyte_data, '_normalized_at') as _normalized_at,
-	JSONExtractString(_airbyte_data, 'utm_hashcode') as utm_hashcode,
 	toLowCardinality(__table_name) as __table_name,
 	toDateTime32(_airbyte_emitted_at) as __emitted_at,
 	now() as __normalized_at
 from
 	(select *,
-	'travelata._airbyte_raw_sheets_default_travelatautmcraft_normalize_utmcraft_utmresult' as __table_name 
-	from travelata.`_airbyte_raw_normalize_utmcraft_utmresult`) x
+	'travelata._airbyte_raw_sheets_utmcraft_travelata_normalize_utmcraft_utmresult' as __table_name 
+	from travelata.`_airbyte_raw_sheets_utmcraft_travelata_normalize_utmcraft_utmresult`) x
   )

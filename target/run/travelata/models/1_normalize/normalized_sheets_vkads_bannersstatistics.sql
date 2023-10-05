@@ -1,6 +1,6 @@
 
 
-  create view travelata.normalized_sheets_vkads_bannersstatistics 
+  create view travelata.normalized_sheets_vkads_bannersstatistics__dbt_tmp 
   
   as (
     select
@@ -29,6 +29,6 @@
 	now() as __normalized_at
 from
 	(select *,
-	'travelata.`_airbyte_raw_banners_statistics``' as __table_name 
-	from travelata.`_airbyte_raw_banners_statistics`) x
+	'travelata.`_airbyte_raw_sheets_vkads_travelata_banners_statistics`' as __table_name 
+	from travelata.`_airbyte_raw_sheets_vkads_travelata_banners_statistics`) x
   )

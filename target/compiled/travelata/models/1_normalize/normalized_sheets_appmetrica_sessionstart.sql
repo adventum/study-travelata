@@ -1,6 +1,6 @@
 SELECT 
 JSONExtractString(_airbyte_data, 'session_id') AS session_id,
-JSONExtractString(_airbyte_data, 'session_start_datetime') AS session_start_datetime,
+toDateTime(JSONExtractString(_airbyte_data, 'session_start_datetime')) AS session_start_datetime,
 JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
 JSONExtractString(_airbyte_data, 'appmetricaDeviceId') AS appmetricaDeviceId,
 JSONExtractString(_airbyte_data, 'city') AS city,
@@ -13,6 +13,6 @@ toLowCardinality(__table_name) AS __table_name,
 NOW() as __normalized_at
 FROM 
 (
-select *, 'travelata._airbyte_raw_sheets_appmetrica_sessions_starts' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_sessions_starts
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_sessions_starts' as __table_name
+from travelata._airbyte_raw_sheets_appmetrica_travelata_sessions_starts
 )
