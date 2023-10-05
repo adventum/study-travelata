@@ -19,5 +19,5 @@ toLowCardinality(table_name) as table_name,
 toDateTime32(_airbyte_emitted_at) as _emitted_at,
 now() as _normalized_at 
 from
-(SELECT *,'travelata._airbyte_raw_sheets_ymvisits_travelataym_visits' as table_name
-FROM travelata.`_airbyte_raw_sheets_ymvisits_travelataym_visits`)
+(SELECT *,'travelata._airbyte_raw_sheets_ymvisits_travelata_ym_visits' as table_name
+FROM travelata.`_airbyte_raw_sheets_ymvisits_travelata_ym_visits`)
