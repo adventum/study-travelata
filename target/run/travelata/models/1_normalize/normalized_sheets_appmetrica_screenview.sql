@@ -1,10 +1,10 @@
 
 
-  create view travelata.normalized_sheets_appmetrica_screenview 
+  create view travelata.normalized_sheets_appmetrica_screenview__dbt_tmp 
   
   as (
     SELECT 
-JSONExtractString(_airbyte_data, 'eventDateTime') AS eventDateTime,
+toDateTime(JSONExtractString(_airbyte_data, 'eventDateTime')) AS eventDateTime,
 JSONExtractString(_airbyte_data, 'mobileAdsId') AS appmetricamobileAdsId_device_id,
 JSONExtractString(_airbyte_data, 'accountName') AS accountName,
 JSONExtractString(_airbyte_data, 'appmetricaDeviceId') AS appmetricaDeviceId,
@@ -18,7 +18,7 @@ toLowCardinality(__table_name) AS __table_name,
 NOW() as __normalized_at
 FROM 
 (
-select *, 'travelata._airbyte_raw_sheets_appmetrica_screen_view' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_screen_view
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_screen_view' as __table_name
+from travelata._airbyte_raw_sheets_appmetrica_travelata_screen_view
 )
   )

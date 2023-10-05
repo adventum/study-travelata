@@ -1,6 +1,6 @@
 SELECT 
 JSONExtractString(_airbyte_data, 'deeplink_url_parameters') AS deeplink_url_parameters,
-JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
+toDateTime(JSONExtractString(_airbyte_data, 'event_datetime')) AS event_datetime,
 JSONExtractString(_airbyte_data, 'profile_id') AS profile_id,
 JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
 JSONExtractString(_airbyte_data, 'city') AS city,
@@ -13,6 +13,6 @@ toLowCardinality(__table_name) AS __table_name,
 NOW() as __normalized_at
 FROM 
 (
-select *, 'travelata._airbyte_raw_sheets_appmetrica_deeplinks' as __table_name
-from travelata._airbyte_raw_sheets_appmetrica_deeplinks
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_deeplinks' as __table_name
+from travelata._airbyte_raw_sheets_appmetrica_travelata_deeplinks
 )
