@@ -1,5 +1,5 @@
 select
-	parseDateTime(JSONExtractString(_airbyte_data, 'date'), '%Y-%m-%d %H:%M:%S') AS __datetime,
+	JSONExtractString(_airbyte_data, 'date') AS __datetime,
 	JSONExtractString(_airbyte_data, 'tps') as tps,
 	JSONExtractString(_airbyte_data, 'spent') as spent,
 	JSONExtractString(_airbyte_data, 'shows') as shows,
