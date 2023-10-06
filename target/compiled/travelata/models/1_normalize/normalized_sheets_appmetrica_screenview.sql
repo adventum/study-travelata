@@ -1,5 +1,5 @@
 SELECT 
-toDateTime(JSONExtractString(_airbyte_data, 'eventDateTime')) AS eventDateTime,
+JSONExtractString(_airbyte_data, 'eventDateTime') AS __datetime,
 JSONExtractString(_airbyte_data, 'mobileAdsId') AS appmetricamobileAdsId_device_id,
 JSONExtractString(_airbyte_data, 'accountName') AS accountName,
 JSONExtractString(_airbyte_data, 'appmetricaDeviceId') AS appmetricaDeviceId,
