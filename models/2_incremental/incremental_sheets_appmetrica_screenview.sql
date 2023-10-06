@@ -7,5 +7,5 @@
     )
 }}
 
-SELECT * REPLACE(parseDateTime(__datetime, '%d.%m.%Y') AS __datetime)
+SELECT * REPLACE(parseDateTime(__datetime, '%Y-%m-%d %H:%i:%s') AS __datetime)
 FROM {{ ref('normalized_sheets_appmetrica_screenview')}}
