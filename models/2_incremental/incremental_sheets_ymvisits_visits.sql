@@ -8,4 +8,4 @@ unique_key=['toDate(_date)','table_name']
 }}
 
 select * replace (toDate(_date) as _date)
-from {{ref('normalized_sheets_mytarget_banners_statjstics_new')}}
+from {{ref('normalized_sheets_ymvisits_visits')}}
