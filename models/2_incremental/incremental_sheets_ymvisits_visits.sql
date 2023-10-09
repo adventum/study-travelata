@@ -7,5 +7,5 @@ unique_key=['toDate(_datatime)','table_name']
 )
 }}
 
-select * replace (toDate32(`_datatime`) as _date)
+select * replace(toDate32(`_datatime`) as _datatime)
 from {{ref('normalized_sheets_ymvisits_visits')}}
