@@ -1,5 +1,6 @@
 SELECT 
 JSONExtractString(_airbyte_data, 'session_id') AS session_id,
+JSONExtractString(_airbyte_data, 'session_start_datetime') AS session_start_datetime,
 JSONExtractString(_airbyte_data, 'session_start_datetime') AS __datetime,
 JSONExtractString(_airbyte_data, 'appmetrica_device_id') AS appmetrica_device_id,
 JSONExtractString(_airbyte_data, 'appmetricaDeviceId') AS appmetricaDeviceId,
