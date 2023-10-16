@@ -1,9 +1,9 @@
 {{
 config(
 materialized='incremental',
-order_by=('toDate(_datatime)','table_name'),
+order_by=('toDate(_datatime)','__table_name'),
 incremental_strategy='delete+insert',
-unique_key=['toDate(_datatime)','table_name']
+unique_key=['toDate(_datatime)','__table_name']
 )
 }}
 
