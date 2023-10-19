@@ -1,5 +1,5 @@
 SELECT
-parseDateTime(JSONExtractString(_airbyte_data, 'event_datetime'), '%d.%m.%Y') AS __datetime,
+JSONExtractString(_airbyte_data, 'event_datetime') AS __datetime,
 JSONExtractString(_airbyte_data, 'event_datetime') AS event_datetime,
 JSONExtractString(_airbyte_data, 'event_json') AS event_json,
 JSONExtractString(_airbyte_data, 'event_name') AS event_name,
@@ -17,6 +17,6 @@ toLowCardinality(__table_name) AS __table_name,
 NOW() as __normalized_at
 FROM 
 (
-select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata__events' as __table_name
+select *, 'travelata._airbyte_raw_sheets_appmetrica_travelata_events' as __table_name
 from travelata._airbyte_raw_sheets_appmetrica_travelata_events
 )
