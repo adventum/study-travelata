@@ -11,5 +11,5 @@ toLowCardinality(__table_name) as __table_name,
 toDateTime32(_airbyte_emitted_at) as __emitted_at,
 NOW() as __normalized_at
 from 
-(select *, '__airbyte_raw_sheets_mediaplans_travelata_yandexdisk_mediaplans_new' as __table_name
-from travelata._airbyte_raw_sheets_mediaplans_travelata_yandexdisk_mediaplans_new)
+(select *, '_airbyte_raw_sheets_yandexdisk_travelata_yandexdisk_mediaplans' as __table_name
+from travelata._airbyte_raw_sheets_yandexdisk_travelata_yandexdisk_mediaplans)

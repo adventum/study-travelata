@@ -5,5 +5,5 @@
     )
 }}
 
-SELECT * 
-FROM {{ ref('normalized_sheets_yandexdisk_mediaplans')}}
+SELECT *
+FROM {{ ref('normalized_sheets_vkads_banners')}}
