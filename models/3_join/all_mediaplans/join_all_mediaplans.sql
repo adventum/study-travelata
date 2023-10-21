@@ -5,8 +5,8 @@
 }}
 
 select
-    assumeNotNull(Period_start) as planCostDateStart,
-    assumeNotNull(Period_end) as planCostDateEnd,
+    assumeNotNull(toDate32(Period_start)) as planCostDateStart,
+    assumeNotNull(toDate32(Period_end)) as planCostDateEnd,
     toLowCardinality(splitByChar('_', __table_name)[6]) as accountName,
     ProductName as productName,
     Geo as cityCode,
