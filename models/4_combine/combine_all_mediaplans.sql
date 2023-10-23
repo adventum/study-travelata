@@ -14,7 +14,7 @@ from {{ ref('join_all_mediaplans')}}
 
 select
 planCostDate,
-accountName,
+__table_name,
 productName,
 cityCode,
 adSourceDirty,
