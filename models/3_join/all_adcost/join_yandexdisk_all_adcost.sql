@@ -7,7 +7,7 @@
 select
     toDate(__datetime) as adCostDate,
     toLowCardinality('*') as reportType,
-    toLowCardinality(splitByChar('_', __table_name)[6]) as accountName,
+    toLowCardinality(__table_name) as __table_name,
     case 
     when Source = 'yandex' then 'Yandex Direct Ads'
     when Source = 'vk' then 'VK Ads'
