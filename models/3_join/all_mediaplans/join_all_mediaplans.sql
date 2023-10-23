@@ -32,5 +32,5 @@ select
 from {{ref('incremental_sheets_yandexdisk_mediaplans')}}
 where 
     Period_start is not null and Period_end is not null
-group by planCostDateStart, planCostDateEnd, accountName, productName, cityCode, adSourceDirty, utmSource, utmMedium, utmCampaign, utmTerm,
+group by planCostDateStart, planCostDateEnd, __table_name, productName, cityCode, adSourceDirty, utmSource, utmMedium, utmCampaign, utmTerm,
    utmContent, utmHash
