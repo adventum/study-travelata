@@ -7,7 +7,7 @@
 select
     assumeNotNull(toDate32(Period_start)) as planCostDateStart,
     assumeNotNull(toDate32(Period_end)) as planCostDateEnd,
-    toLowCardinality(splitByChar('_', __table_name)[6]) as accountName,
+    toLowCardinality(__table_name) as __table_name,
     ProductName as productName,
     Geo as cityCode,
     assumeNotNull(coalesce({{ get_adsourcedirty('Source', 'Medium') }}, '')) as adSourceDirty,
