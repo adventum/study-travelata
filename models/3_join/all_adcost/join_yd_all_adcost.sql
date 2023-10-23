@@ -7,7 +7,7 @@
   select
     toDate(__datetime) as adCostDate,
     toLowCardinality(upper(extract(__table_name, 'ydstat(.)'))) as reportType,
-    toLowCardinality(splitByChar('_', __table_name)[6]) as accountName,
+    toLowCardinality(__table_name) as __table_name,
     'Yandex Direct Ads' as adSourseDirty,
     '' as productName,
     CampaignId as adCampaignId,
