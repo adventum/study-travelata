@@ -13,7 +13,9 @@ with
  select
  toLowCardinality(splitByChar('_',ban_st.__table_name)[6]) as __table_name, 
  toDate(ban_st._date) as adCostDate,
+ '' AS reportType,
  'MyTarget' as adSourceDirty,
+ '' AS productName,
  cam.name as adCampaignName,
  cam.id as adCampaignId,
  '' as adCampaignType,
@@ -21,6 +23,7 @@ with
  '' as adGroupName,
  cam.id as adId,
  '' as adPhraseName,
+ '' as adPhraseId,
  '' as cityCode,
  EXTRACT(JSON_VALUE(REPLACE (ban.urls,'''','"'),'$.primary.url'),'utm_source=([^&]*)') as utmSource,
  EXTRACT(JSON_VALUE(REPLACE (ban.urls,'''','"'),'$.primary.url'),'utm_medium=([^&]*)') as utmMedium,
