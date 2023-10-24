@@ -13,7 +13,7 @@ select
 	JSONExtractString(_airbyte_data, 'uniques') as uniques,
 	JSONExtractString(_airbyte_data, 'carousel') as carousel,
 	JSONExtractString(_airbyte_data, 'playable') as playable,
-	JSONExtractString(_airbyte_data, 'ad_group_id') as ad_group_id,
+	JSONExtractString(_airbyte_data, 'ad_plan_id') as ad_plan_id,
 	JSONExtractString(_airbyte_data, 'custom_event') as custom_event,
 	JSONExtractString(_airbyte_data, 'uniques_video') as uniques_video,
     JSONExtractString(_airbyte_data, '_airbyte_ab_id') as _airbyte_ab_id,

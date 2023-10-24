@@ -8,4 +8,4 @@
 }}
 
 SELECT * REPLACE(parseDateTime(__datetime, '%Y-%m-%d') AS __datetime)
-FROM {{ ref('normalized_sheets_yandexdisk_othercosts')}}
+FROM {{ ref('normalized_sheets_yd_customreport')}}
