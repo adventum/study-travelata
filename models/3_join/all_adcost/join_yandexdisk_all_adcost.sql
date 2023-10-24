@@ -19,7 +19,7 @@ select
     else 'источник не определяется' 
     end as adSourseDirty,
     ProductName as productName,
-    Campaign as adCampainName,
+    Campaign as adCampaignName,
     '' as adGroupName,
     '' as adId,
     '' as adPhraseId,
@@ -28,7 +28,7 @@ select
     '' as utmCampaign,
     '' as utmTerm,
     '' as utmContent,
-    {{ get_utmhash('__', ['Campaign']) }} as utmHash,
+    {{get_utmhash('_'['Campaign'])}} as utmHash,
     '' as adTitle1,
     '' as adTitle2,
     '' as adText,
