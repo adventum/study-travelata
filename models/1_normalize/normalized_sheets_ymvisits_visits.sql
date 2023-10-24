@@ -17,7 +17,8 @@ JSONExtractString(`_airbyte_data`,'parsedParamsKey2') as parsed_params_key2,
 JSONExtractString(_airbyte_data,'_airbyte_ab_id') as _airbyte_ab_id,
 toLowCardinality(__table_name) as __table_name,
 toDateTime32(_airbyte_emitted_at) as _emitted_at,
-now() as _normalized_at 
+now() as _normalized_at,
+JSONExtractString(_airbyte_data,'load_date') as load_date
 from
 (SELECT *,'travelata._airbyte_raw_sheets_ymvisits_travelata_ym_visits' as __table_name
 FROM travelata.`_airbyte_raw_sheets_ymvisits_travelata_ym_visits`)
