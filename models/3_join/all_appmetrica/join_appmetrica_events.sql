@@ -13,6 +13,7 @@ select
     profile_id as crmUsereId,
     os_name as osName,
     city as cityName,
+    session_id as sessionId,
     JSONExtractString(event_json, 'item_name') AS itemName,
     JSONExtractString(event_json, 'item_id') AS itemId,
     JSONExtractString(event_json, 'item_category') AS itemCategory
