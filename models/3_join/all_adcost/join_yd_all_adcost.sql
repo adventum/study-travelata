@@ -8,7 +8,7 @@
     toLowCardinality(__table_name) as __table_name,
     toDate(__datetime) as adCostDate,
     toLowCardinality(upper(extract(__table_name, 'ydstat(.)'))) as reportType,
-        'Yandex Direct Ads' as adSourseDirty,
+        'Yandex Direct Ads' as adSourсeDirty,
     '' as productName,
     CampaignName as adCampaignName,
     CampaignId as adCampaignId,
