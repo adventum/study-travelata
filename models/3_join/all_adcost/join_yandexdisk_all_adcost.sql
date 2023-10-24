@@ -5,9 +5,9 @@
 }}
 
 select
+    toLowCardinality(__table_name) as __table_name,
     toDate(__datetime) as adCostDate,
     toLowCardinality('*') as reportType,
-    toLowCardinality(__table_name) as __table_name,
     case 
     when Source = 'yandex' then 'Yandex Direct Ads'
     when Source = 'vk' then 'VK Ads'
@@ -20,9 +20,14 @@ select
     end as adSourseDirty,
     ProductName as productName,
     Campaign as adCampaignName,
+    '' as adCampaignId,
+    '' as adCampaignType,
+    '' as adGroupId,
     '' as adGroupName,
     '' as adId,
+    '' as adPhraseName,
     '' as adPhraseId,
+    '' as cityCode,
     '' as utmSourse,
     Medium as utmMedium,
     '' as utmCampaign,
@@ -32,7 +37,6 @@ select
     '' as adTitle1,
     '' as adTitle2,
     '' as adText,
-    '' as adPhraseName,
     Cost as adCost,
     Impressions as impressions,
     Clicks as clicks,
