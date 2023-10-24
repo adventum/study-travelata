@@ -25,7 +25,9 @@ select
     CONCAT(Campaign, '_', toString(planCostDateStart), '_', toString(planCostDateEnd)) as utmCampaign,
     '' as utmTerm,
     '' as utmContent,
-    {{ get_utmhash('__', ['Campaign']) }} as  utmHash,
+    '' as adGroupName,
+    '' as adCampaignName,
+    {{get_utmhash('_'['utmCampaign'])}} as utmHash,
     sum(toInt32(Cost)) as planCost,
     max(load_date) as load_date
 
