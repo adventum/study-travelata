@@ -28,7 +28,7 @@ select
     '' as adPhraseName,
     '' as adPhraseId,
     '' as cityCode,
-    '' as utmSourse,
+    '' as utmSource,
     Medium as utmMedium,
     '' as utmCampaign,
     '' as utmTerm,
