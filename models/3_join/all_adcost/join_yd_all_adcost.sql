@@ -19,7 +19,7 @@
     Criterion as adPhraseName,
     CriterionId as adPhraseId,
     '' as cityCode,
-    '' as utmSourse,
+    '' as utmSource,
     '' as utmMedium,
     '' as utmCampaign,
     '' as utmTerm,
