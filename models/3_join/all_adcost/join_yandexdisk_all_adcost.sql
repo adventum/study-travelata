@@ -17,7 +17,7 @@ select
     when Source = 'ok' then 'OK Ads'
     when Source = 'tg' then 'TG Ads'
     else 'источник не определяется' 
-    end as adSourсeDirty,
+    end as adSourceDirty,
     ProductName as productName,
     Campaign as adCampaignName,
     '' as adCampaignId,
