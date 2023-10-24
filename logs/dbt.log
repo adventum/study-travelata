@@ -5788,3 +5788,273 @@ drop table if exists travelata.my_second_dbt_model__dbt_backup
 [0m17:43:14.487348 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=5 SKIP=0 TOTAL=10
 [0m17:43:14.490348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AA8CFCD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AA8E05610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019AA8A5E710>]}
 [0m17:43:14.491342 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2023-10-24 07:00:16.058767 | 6e57d7ac-b595-44b6-a750-388ccd3aa0d5 ==============================
+[0m07:00:16.058767 [info ] [MainThread]: Running with dbt=1.4.8
+[0m07:00:16.063763 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': 'C:\\Users\\Мама\\.dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'select': ['join_yandexdisk_all_adcost'], 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m07:00:16.063763 [debug] [MainThread]: Tracking: tracking
+[0m07:00:16.077764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002971E0C4190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002971E0C4160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002971E0C4F70>]}
+[0m07:00:16.112762 [debug] [MainThread]: checksum: f01b10a6d8b8fec35a0597d95e90748b0c8d809fd4dc5966a395de2efe8a9e99, vars: {}, profile: None, target: None, version: 1.4.8
+[0m07:00:17.639095 [debug] [MainThread]: Partial parsing enabled: 11 files deleted, 48 files added, 0 files changed.
+[0m07:00:17.640095 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_yandexdisk_mediaplans.sql
+[0m07:00:17.641095 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_vkads_adgroups.sql
+[0m07:00:17.642090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_vkads_banners.sql
+[0m07:00:17.643095 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_appmetrica_deeplinks.sql
+[0m07:00:17.643095 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_utmcraft_utmresult.sql
+[0m07:00:17.644095 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_ymvisits_visits.sql
+[0m07:00:17.645092 [debug] [MainThread]: Partial parsing: added file: travelata://models\3_for_dashbord\otladka0.sql
+[0m07:00:17.646090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_ymvisits_visits.sql
+[0m07:00:17.647089 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_vkads_banners.sql
+[0m07:00:17.648090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_vkads_adplans.sql
+[0m07:00:17.648090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_appmetrica_sessionstart.sql
+[0m07:00:17.649092 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_appmetrica_profiles.sql
+[0m07:00:17.650091 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_vkads_bannersstatistics.sql
+[0m07:00:17.651101 [debug] [MainThread]: Partial parsing: added file: travelata://models\2_staging\1_join\join_all_mediaplans.sql
+[0m07:00:17.651101 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_vkads_adgroupsstatistics.sql
+[0m07:00:17.652094 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_yd_customreport.sql
+[0m07:00:17.653091 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_appmetrica_install.sql
+[0m07:00:17.654089 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_vkads_adplansstatistics.sql
+[0m07:00:17.655090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_appmetrica_events.sql
+[0m07:00:17.656090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_appmetrica_profiles.sql
+[0m07:00:17.657090 [debug] [MainThread]: Partial parsing: added file: travelata://macros\misc\adsourcedirty.sql
+[0m07:00:17.658091 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_yandexdisk_mediaplans.sql
+[0m07:00:17.659090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_yd_customreport.sql
+[0m07:00:17.660090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_yandexdisk_othercosts.sql
+[0m07:00:17.661091 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_appmetrica_screenview.sql
+[0m07:00:17.662090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_appmetrica_install.sql
+[0m07:00:17.663091 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_yandexdisk_othercosts.sql
+[0m07:00:17.664088 [debug] [MainThread]: Partial parsing: added file: travelata://macros\misc\utmhash.sql
+[0m07:00:17.665090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_vkads_adplans.sql
+[0m07:00:17.666089 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_vkads_bannersstatistics.sql
+[0m07:00:17.666089 [debug] [MainThread]: Partial parsing: added file: travelata://models\2_staging\1_join\join_yd_all_adcost.sql
+[0m07:00:17.668091 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_mytarget_banners.sql
+[0m07:00:17.669090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_mytarget_banners.sql
+[0m07:00:17.670090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_appmetrica_events.sql
+[0m07:00:17.671091 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_mytarget_compagins.sql
+[0m07:00:17.672089 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_utmcraft_utmresult.sql
+[0m07:00:17.673089 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_mytarget_banners_statistics.sql
+[0m07:00:17.674090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_vkads_adgroups.sql
+[0m07:00:17.676089 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_appmetrica_screenview.sql
+[0m07:00:17.677095 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_mytarget_banners_statistics.sql
+[0m07:00:17.679091 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_appmetrica_deeplinks.sql
+[0m07:00:17.680090 [debug] [MainThread]: Partial parsing: added file: travelata://models\2_staging\2_combine\combine_all_mediaplans.sql
+[0m07:00:17.680090 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_vkads_adgroupsstatistics.sql
+[0m07:00:17.681091 [debug] [MainThread]: Partial parsing: added file: travelata://models\2_staging\1_join\join_yandexdisk_all_adcost.sql
+[0m07:00:17.682096 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_mytarget_compagins.sql
+[0m07:00:17.683096 [debug] [MainThread]: Partial parsing: added file: travelata://models\3_for_dashbord\otladka1.sql
+[0m07:00:17.683096 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\1_normalize\normalized_sheets_appmetrica_sessionstart.sql
+[0m07:00:17.684094 [debug] [MainThread]: Partial parsing: added file: travelata://models\1_silos\2_incremental\incremental_sheets_vkads_adplansstatistics.sql
+[0m07:00:17.685097 [debug] [MainThread]: Partial parsing: deleted file: travelata://models\1_normalize\normalized_sheets_appmetrica_profiles.sql
+[0m07:00:17.686093 [debug] [MainThread]: Partial parsing: deleted file: travelata://models\1_normalize\normalized_sheets_utmcraft_utmresult.sql
+[0m07:00:17.686938 [debug] [MainThread]: Partial parsing: deleted file: travelata://models\1_normalize\test.sql
+[0m07:00:17.687095 [debug] [MainThread]: Partial parsing: deleted file: travelata://models\1_normalize\normalized_sheets_appmetrica_events.sql
+[0m07:00:17.688095 [debug] [MainThread]: Partial parsing: deleted file: travelata://models\1_normalize\normalized_sheets_vkads_adplansstatistics.sql
+[0m07:00:17.688095 [debug] [MainThread]: Partial parsing: deleted file: travelata://models\example\my_second_dbt_model.sql
+[0m07:00:17.689096 [debug] [MainThread]: Partial parsing: deleted file: travelata://models\1_normalize\normalized_sheets_vkads_bannersstatistics.sql
+[0m07:00:17.690094 [debug] [MainThread]: Partial parsing: deleted file: travelata://models\1_normalize\normalized_sheets_vkads_adgroupsstatistics.sql
+[0m07:00:17.690094 [debug] [MainThread]: Partial parsing: deleted file: travelata://models\example\my_first_dbt_model.sql
+[0m07:00:17.691095 [debug] [MainThread]: Partial parsing: deleted file: travelata://models\1_normalize\normalized_sheets_appmetrica_install.sql
+[0m07:00:17.745668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_yandexdisk_mediaplans.sql
+[0m07:00:17.769668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_vkads_adgroups.sql
+[0m07:00:17.776669 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_vkads_banners.sql
+[0m07:00:17.783668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_appmetrica_deeplinks.sql
+[0m07:00:17.793671 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_appmetrica_deeplinks.sql
+[0m07:00:17.796669 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_utmcraft_utmresult.sql
+[0m07:00:17.803668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_ymvisits_visits.sql
+[0m07:00:17.812669 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_ymvisits_visits.sql
+[0m07:00:17.816669 [debug] [MainThread]: 1699: static parser successfully parsed 3_for_dashbord\otladka0.sql
+[0m07:00:17.823668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_ymvisits_visits.sql
+[0m07:00:17.829668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_vkads_banners.sql
+[0m07:00:17.838668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_vkads_banners.sql
+[0m07:00:17.842668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_vkads_adplans.sql
+[0m07:00:17.850668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_vkads_adplans.sql
+[0m07:00:17.853671 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_appmetrica_sessionstart.sql
+[0m07:00:17.862669 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_appmetrica_sessionstart.sql
+[0m07:00:17.866669 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_appmetrica_profiles.sql
+[0m07:00:17.875668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_appmetrica_profiles.sql
+[0m07:00:17.879668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_vkads_bannersstatistics.sql
+[0m07:00:17.888671 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_vkads_bannersstatistics.sql
+[0m07:00:17.893671 [debug] [MainThread]: 1603: static parser failed on 2_staging\1_join\join_all_mediaplans.sql
+[0m07:00:17.911668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 2_staging\1_join\join_all_mediaplans.sql
+[0m07:00:17.915668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_vkads_adgroupsstatistics.sql
+[0m07:00:17.924668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_vkads_adgroupsstatistics.sql
+[0m07:00:17.928669 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_yd_customreport.sql
+[0m07:00:17.934668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_appmetrica_install.sql
+[0m07:00:17.941668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_vkads_adplansstatistics.sql
+[0m07:00:17.948669 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_appmetrica_events.sql
+[0m07:00:17.955668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_appmetrica_profiles.sql
+[0m07:00:17.961668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_yandexdisk_mediaplans.sql
+[0m07:00:17.969668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_yandexdisk_mediaplans.sql
+[0m07:00:17.973668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_yd_customreport.sql
+[0m07:00:17.982668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_yd_customreport.sql
+[0m07:00:17.986669 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_yandexdisk_othercosts.sql
+[0m07:00:17.994668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_yandexdisk_othercosts.sql
+[0m07:00:17.998668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_appmetrica_screenview.sql
+[0m07:00:18.009668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_appmetrica_screenview.sql
+[0m07:00:18.013668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_appmetrica_install.sql
+[0m07:00:18.022668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_appmetrica_install.sql
+[0m07:00:18.026669 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_yandexdisk_othercosts.sql
+[0m07:00:18.033668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_vkads_adplans.sql
+[0m07:00:18.040668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_vkads_bannersstatistics.sql
+[0m07:00:18.046669 [debug] [MainThread]: 1603: static parser failed on 2_staging\1_join\join_yd_all_adcost.sql
+[0m07:00:18.056671 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 2_staging\1_join\join_yd_all_adcost.sql
+[0m07:00:18.059671 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_mytarget_banners.sql
+[0m07:00:18.066670 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_mytarget_banners.sql
+[0m07:00:18.075671 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_mytarget_banners.sql
+[0m07:00:18.079671 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_appmetrica_events.sql
+[0m07:00:18.088671 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_appmetrica_events.sql
+[0m07:00:18.092668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_mytarget_compagins.sql
+[0m07:00:18.100667 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_mytarget_compagins.sql
+[0m07:00:18.104667 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_utmcraft_utmresult.sql
+[0m07:00:18.112670 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_utmcraft_utmresult.sql
+[0m07:00:18.116668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_mytarget_banners_statistics.sql
+[0m07:00:18.122667 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_vkads_adgroups.sql
+[0m07:00:18.132667 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_vkads_adgroups.sql
+[0m07:00:18.136667 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_appmetrica_screenview.sql
+[0m07:00:18.143668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_mytarget_banners_statistics.sql
+[0m07:00:18.151669 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_mytarget_banners_statistics.sql
+[0m07:00:18.155668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_appmetrica_deeplinks.sql
+[0m07:00:18.162669 [debug] [MainThread]: 1699: static parser successfully parsed 2_staging\2_combine\combine_all_mediaplans.sql
+[0m07:00:18.168668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_vkads_adgroupsstatistics.sql
+[0m07:00:18.175671 [debug] [MainThread]: 1603: static parser failed on 2_staging\1_join\join_yandexdisk_all_adcost.sql
+[0m07:00:18.184668 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 2_staging\1_join\join_yandexdisk_all_adcost.sql
+[0m07:00:18.188668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_mytarget_compagins.sql
+[0m07:00:18.194671 [debug] [MainThread]: 1699: static parser successfully parsed 3_for_dashbord\otladka1.sql
+[0m07:00:18.201668 [debug] [MainThread]: 1699: static parser successfully parsed 1_silos\1_normalize\normalized_sheets_appmetrica_sessionstart.sql
+[0m07:00:18.208668 [debug] [MainThread]: 1603: static parser failed on 1_silos\2_incremental\incremental_sheets_vkads_adplansstatistics.sql
+[0m07:00:18.217671 [debug] [MainThread]: 1602: parser fallback to jinja rendering on 1_silos\2_incremental\incremental_sheets_vkads_adplansstatistics.sql
+[0m07:00:18.238668 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.travelata.example
+[0m07:00:18.308669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6e57d7ac-b595-44b6-a750-388ccd3aa0d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002972143A2E0>]}
+[0m07:00:18.342669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6e57d7ac-b595-44b6-a750-388ccd3aa0d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029721409EE0>]}
+[0m07:00:18.343673 [info ] [MainThread]: Found 46 models, 0 tests, 0 snapshots, 0 analyses, 326 macros, 0 operations, 0 seed files, 0 sources, 0 exposures, 0 metrics
+[0m07:00:18.344669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6e57d7ac-b595-44b6-a750-388ccd3aa0d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029721409B80>]}
+[0m07:00:18.348669 [info ] [MainThread]: 
+[0m07:00:18.352669 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m07:00:18.354671 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_schemas'
+[0m07:00:18.375671 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:00:22.378994 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_schemas: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "connection_name": "list_schemas"} */
+
+    select name from system.databases
+  ...
+[0m07:00:22.384981 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m07:00:22.394981 [debug] [ThreadPool]: Acquiring new clickhouse connection 'list_None_travelata'
+[0m07:00:22.406981 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:00:22.661619 [debug] [ThreadPool]: dbt_clickhouse adapter: On list_None_travelata: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "connection_name": "list_None_travelata"} */
+select
+      t.name as name,
+      t.database as schema,
+      if(engine not in ('MaterializedView', 'View'), 'table', 'view') as type,
+      db.engine as db_engine
+    from system.tables as t JOIN system.databases as db on t.database = db.name
+    where schema = 'travelata'
+  ...
+[0m07:00:22.673621 [debug] [ThreadPool]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m07:00:22.700618 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6e57d7ac-b595-44b6-a750-388ccd3aa0d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002971E0A0100>]}
+[0m07:00:22.702619 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m07:00:22.704618 [info ] [MainThread]: 
+[0m07:00:22.716617 [debug] [Thread-1  ]: Began running node model.travelata.join_yandexdisk_all_adcost
+[0m07:00:22.718618 [info ] [Thread-1  ]: 1 of 1 START sql view model travelata.join_yandexdisk_all_adcost ............... [RUN]
+[0m07:00:22.724773 [debug] [Thread-1  ]: Acquiring new clickhouse connection 'model.travelata.join_yandexdisk_all_adcost'
+[0m07:00:22.727594 [debug] [Thread-1  ]: Began compiling node model.travelata.join_yandexdisk_all_adcost
+[0m07:00:22.741188 [debug] [Thread-1  ]: Writing injected SQL for node "model.travelata.join_yandexdisk_all_adcost"
+[0m07:00:22.744192 [debug] [Thread-1  ]: Timing info for model.travelata.join_yandexdisk_all_adcost (compile): 2023-10-24 07:00:22.729341 => 2023-10-24 07:00:22.744192
+[0m07:00:22.745190 [debug] [Thread-1  ]: Began executing node model.travelata.join_yandexdisk_all_adcost
+[0m07:00:22.893901 [debug] [Thread-1  ]: Writing runtime sql for node "model.travelata.join_yandexdisk_all_adcost"
+[0m07:00:22.899546 [debug] [Thread-1  ]: Opening a new connection, currently in state init
+[0m07:00:23.070431 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.join_yandexdisk_all_adcost: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.join_yandexdisk_all_adcost"} */
+
+
+  create view travelata.join_yandexdisk_all_adcost__dbt_tmp 
+  
+  as (
+    
+
+select
+    toDate(__datetime) as adCostDate,
+    toLowCardinality('*') as reportType,
+    toLowCardinality(__table_name) as __table_name,
+    case 
+    when Source = 'yandex' then 'Yandex Direct Ads'
+    when Source = 'vk' then 'VK Ads'
+    when Source = 'mt' then 'MyTarget'
+    when Source = 'yandex-business' then 'Yandex Business'
+    when Source = 'yandex-dzen' then 'Yandex Dzen Ads'
+    when Source = 'ok' then 'OK Ads'
+    when Source = 'tg' then 'TG Ads'
+    else 'источник не определяется' 
+    end as adSourseDirty,
+    ProductName as productName,
+    Campaign as adCampainName,
+    '' as adGroupName,
+    '' as adId,
+    '' as adPhraseId,
+    '' as utmSourse,
+    Medium as utmMedium,
+    '' as utmCampaign,
+    '' as utmTerm,
+    '' as utmContent,
+    coalesce(extract(Campaign, '__([a-zA-Z0-9]{8})'), '') as utmHash,
+    '' as adTitle1,
+    '' as adTitle2,
+    '' as adText,
+    '' as adPhraseName,
+    Cost as adCost,
+    Impressions as impressions,
+    Clicks as clicks,
+    load_date
+
+from travelata.incremental_sheets_yandexdisk_othercosts
+  )...
+[0m07:00:23.082430 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m07:00:23.095431 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.join_yandexdisk_all_adcost: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.join_yandexdisk_all_adcost"} */
+
+    drop table if exists travelata.join_yandexdisk_all_adcost__dbt_backup 
+  
+  ...
+[0m07:00:23.100431 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m07:00:23.102430 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.join_yandexdisk_all_adcost: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.join_yandexdisk_all_adcost"} */
+
+    rename table travelata.join_yandexdisk_all_adcost to travelata.join_yandexdisk_all_adcost__dbt_backup 
+  
+  ...
+[0m07:00:23.107431 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m07:00:23.115428 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.join_yandexdisk_all_adcost: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.join_yandexdisk_all_adcost"} */
+
+    drop table if exists travelata.join_yandexdisk_all_adcost 
+  
+  ...
+[0m07:00:23.166430 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.05 seconds
+[0m07:00:23.169433 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.join_yandexdisk_all_adcost: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.join_yandexdisk_all_adcost"} */
+
+    rename table travelata.join_yandexdisk_all_adcost__dbt_tmp to travelata.join_yandexdisk_all_adcost 
+  
+  ...
+[0m07:00:23.177432 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.01 seconds
+[0m07:00:23.305427 [debug] [Thread-1  ]: dbt_clickhouse adapter: On model.travelata.join_yandexdisk_all_adcost: /* {"app": "dbt", "dbt_version": "1.4.8", "profile_name": "travelata", "target_name": "dev", "node_id": "model.travelata.join_yandexdisk_all_adcost"} */
+drop table if exists travelata.join_yandexdisk_all_adcost__dbt_backup 
+  ...
+[0m07:00:23.310429 [debug] [Thread-1  ]: dbt_clickhouse adapter: SQL status: OK in 0.00 seconds
+[0m07:00:23.312429 [debug] [Thread-1  ]: Timing info for model.travelata.join_yandexdisk_all_adcost (execute): 2023-10-24 07:00:22.746190 => 2023-10-24 07:00:23.312429
+[0m07:00:23.314427 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6e57d7ac-b595-44b6-a750-388ccd3aa0d5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029722935D90>]}
+[0m07:00:23.315429 [info ] [Thread-1  ]: 1 of 1 OK created sql view model travelata.join_yandexdisk_all_adcost .......... [[32mOK[0m in 0.59s]
+[0m07:00:23.319430 [debug] [Thread-1  ]: Finished running node model.travelata.join_yandexdisk_all_adcost
+[0m07:00:23.321428 [debug] [MainThread]: Acquiring new clickhouse connection 'master'
+[0m07:00:23.322427 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:00:23.323428 [debug] [MainThread]: Connection 'list_schemas' was left open.
+[0m07:00:23.324428 [debug] [MainThread]: On list_schemas: Close
+[0m07:00:23.324428 [debug] [MainThread]: Connection 'list_None_travelata' was left open.
+[0m07:00:23.325429 [debug] [MainThread]: On list_None_travelata: Close
+[0m07:00:23.325429 [debug] [MainThread]: Connection 'model.travelata.join_yandexdisk_all_adcost' was left open.
+[0m07:00:23.326428 [debug] [MainThread]: On model.travelata.join_yandexdisk_all_adcost: Close
+[0m07:00:23.327428 [info ] [MainThread]: 
+[0m07:00:23.328429 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 4.98 seconds (4.98s).
+[0m07:00:23.329430 [debug] [MainThread]: Command end result
+[0m07:00:23.348430 [info ] [MainThread]: 
+[0m07:00:23.349431 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m07:00:23.351429 [info ] [MainThread]: 
+[0m07:00:23.352430 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m07:00:23.354434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029721558760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029721558130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000297228CDA90>]}
+[0m07:00:23.355429 [debug] [MainThread]: Flushing usage events
