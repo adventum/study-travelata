@@ -34,12 +34,9 @@ select
     '' as utmTerm,
     '' as utmContent,
     {{get_utmhash('_'['Campaign'])}} as utmHash,
-    '' as adTitle1,
-    '' as adTitle2,
-    '' as adText,
-    Cost as adCost,
-    Impressions as impressions,
-    Clicks as clicks,
+    toFloat64(Cost) as adCost,
+    toInt32(Impressions) as impressions,
+    toInt32(Clicks) as clicks,
     load_date
 
 from {{ref('incremental_sheets_yandexdisk_othercosts')}}
