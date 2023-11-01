@@ -13,7 +13,7 @@ select
  arrayElement(splitByChar(',',(trim(BOTH '[]'from parsed_params_key2))),3) as cityCode,
  utm_medium as utmMedium,
  utm_medium as utmCampaign,
- utm_sourse as utmSourse,
+ utm_sourse as utmSourсe,
  assumeNotNull(coalesce({{ get_adsourcedirty('utmSourse', 'utmMedium') }}, 
       multiIf(last_traffic_source = 'ad', {{ get_adsourcedirty('last_adv_engine', 'last_traffic_source') }},
       last_traffic_source = 'organic', {{ get_adsourcedirty('last_referal_source', 'last_traffic_source') }},
