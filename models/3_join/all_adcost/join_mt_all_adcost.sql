@@ -21,7 +21,7 @@ with
  '' as adCampaignType,
  '' as adGroupId,
  '' as adGroupName,
- cam.id as adId,
+ ban.id as adId,
  '' as adPhraseName,
  '' as adPhraseId,
  '' as cityCode,
