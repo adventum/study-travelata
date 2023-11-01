@@ -11,9 +11,9 @@ with
  ban_st as (select *
  from {{ ref('incremental_sheets_mytarget_banners_statistics') }})
  select
- toLowCardinality(splitByChar('_',ban_st.__table_name)[6]) as __table_name, 
+ toLowCardinality(ban_st.__table_name) as __table_name, 
  toDate(ban_st._date) as adCostDate,
- '' AS reportType,
+ toLowCardinality('*') AS reportType,
  'MyTarget' as adSourceDirty,
  '' AS productName,
  cam.name as adCampaignName,
