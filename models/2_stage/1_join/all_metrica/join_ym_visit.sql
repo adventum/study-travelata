@@ -21,7 +21,7 @@ select
  '' as utmTern,
  '' as utmContent,
  utmSourse as utmSource,
- trim(BOTH '['']' from purchase_id) as tramsactionId,
+ trim(BOTH '['']' from purchase_id) as transactionId,
  1 as session,
  assumeNotNull(coalesce(trim(both '[]' from purchase_revenue),0)) as amountSales,
  toInt32(page_views) as pageViews,
