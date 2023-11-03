@@ -2,6 +2,7 @@
     config(
         materialized='table',
         order by = ('toDate(__datetime)'),
+        order by = ('UtmHashHash'),
         schema = 'travelata'
     )
 }}

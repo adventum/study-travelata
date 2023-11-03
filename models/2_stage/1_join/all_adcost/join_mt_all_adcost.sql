@@ -26,7 +26,7 @@ with
  EXTRACT(JSON_VALUE(REPLACE (ban.urls,'''','"'),'$.primary.url'),'utm_campaign=([^&]*)') as utmCampaign,
  EXTRACT(JSON_VALUE(REPLACE (ban.urls,'''','"'),'$.primary.url'),'utm_content=([^&]*)') as utmContent,
  EXTRACT(JSON_VALUE(REPLACE (ban.urls,'''','"'),'$.primary.url'),'utm_term=([^&]*)') as utmTerm,
- {{get_utmhash('_'['utmCampaign'])}} as utmHush,
+ {{get_utmhash('_'['utmCampaign'])}} as utmHash,
  cast (ban_st.spent as float) as adCost,
  toInt32(ban_st.shows) as impressions,
  toInt32(ban_st.clics) as clicks
