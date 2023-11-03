@@ -15,11 +15,11 @@ select
     profile_id as crmUsereId,
     os_name as osName,
     city as cityName,
-    {{ extract_utm_data('click_url_parameters', 'source') }},
-    {{ extract_utm_data('click_url_parameters', 'medium') }},
-    {{ extract_utm_data('click_url_parameters', 'campaign') }},
-    {{ extract_utm_data('click_url_parameters', 'term') }},
-    {{ extract_utm_data('click_url_parameters', 'content') }}
+    {{ extract_utm_data('click_url_parameters', 'source') }} as utmSource,
+    {{ extract_utm_data('click_url_parameters', 'medium') }} as utmMedium,
+    {{ extract_utm_data('click_url_parameters', 'campaign') }} as utmCampaign,
+    {{ extract_utm_data('click_url_parameters', 'term') }} as utmTerm,
+    {{ extract_utm_data('click_url_parameters', 'content') }} as utmContent
     
 
 from {{ ref('incremental_sheets_appmetrica_install') }}

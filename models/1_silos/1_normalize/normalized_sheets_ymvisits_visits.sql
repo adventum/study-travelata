@@ -1,6 +1,9 @@
 SELECT 
 JSONExtractString(`_airbyte_data`,'dateTime') as _datatime,
 JSONExtractString(`_airbyte_data`,'visitID') as visit_id,
+JSONExtractString(`_airbyte_data`,'UTMSource') as utm_sourse,
+JSONExtractString(`_airbyte_data`,'UTMMedium') as utm_medium,
+JSONExtractString(`_airbyte_data`,'UTMCampaign') as utm_campaign,
 JSONExtractString(`_airbyte_data`,'goalsID') as goals_id,
 JSONExtractString(`_airbyte_data`,'lastTrafficSource') as last_traffic_source,
 JSONExtractString(`_airbyte_data`,'lastReferalSource') as last_referal_source,
