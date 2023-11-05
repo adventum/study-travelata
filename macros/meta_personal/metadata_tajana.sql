@@ -1,4 +1,4 @@
-{%- macro metadata_t() -%}
+{%- macro metadata_tatiana() -%}
 entities:
   AdSource:
     keys:
@@ -32,22 +32,15 @@ entities:
     glue: yes
     keys:
     - name: clientId
-  City:
-    keys:
-    - name: cityName
-  CityCode:
-    keys:
-    - name: cityCode
   Visit:
     keys:
     - name: visitId
-  Transaction:
+  Transactions:
     keys:
     - name: transactionId
   AppSession:
     keys:
-    - name: appSessionId
-    ---- name: installationDeviceId
+    - name: session
 links:
   AdCostStat:
     keys:
@@ -61,14 +54,14 @@ links:
     - AdPhrase
     - UtmParams
     - UtmHash 
-  AppSessionStat:
+  AdSessionStat:
     keys:
-    - name: toDate(__datetime)
+    - name: toDate(visitDateTime)
     entities:
     - AppSession
   VisitStat:
     keys:
-    - name: toDate(__datetime)
+    - name: toDate(visitDateTime)
     entities:
-    - Visit 
+    - Visit
 {%- endmacro -%}
