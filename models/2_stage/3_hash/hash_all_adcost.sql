@@ -12,5 +12,5 @@ select
 {{ link_hash('AdCostStat',metadata)}},
 {{entity_hash('UtmHash',metadata)}}
 
-from {{ref('combine_all_adcostd')}}
+from {{ref('combine_all_adcost')}}
 where AdCostStatHash !=''
