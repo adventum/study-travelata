@@ -27,7 +27,7 @@ select
     '' as utmContent,
     '' as adGroupName,
     '' as adCampaignName,
-    {{get_utmhash('_'['utmCampaign'])}} as utmHash,
+    {{get_utmhash('~',['utmCampaign'])}} as utmHash,
     sum(toInt32(Cost)) as planCost,
     max(load_date) as load_date
 

@@ -24,7 +24,7 @@
     '' as utmCampaign,
     '' as utmTerm,
     '' as utmContent,
-    {{get_utmhash('_'['Campaign'])}} as utmHash,
+    {{get_utmhash('~', ['CampaignName'])}} as utmHash,
     toFloat64(Cost)/1000000 as adCost,
     toInt32(Impressions) as impressions,
     toInt32(Clicks) as clicks,
