@@ -4,11 +4,10 @@
     )
 }}
 
-
 select
---раскрыть параметры из UTM меток: utmSource, utmMedium, utmCampaign, utmTerm, utmContent, utmHash составить из Content & Campaign
-
-deeplink_url_parameters as deeplinkUrlParameters,
+{{ extract_utm_data('deeplink_url_parameters', 'source')}} as utmSource,
+{{ extract_utm_data('deeplink_url_parameters', 'medium')}} as utmMedium,
+{{ extract_utm_data('deeplink_url_parameters', 'campaign')}} as utmCampaign,
 event_datetime as eventDatetime,
 profile_id as profileId,
 appmetrica_device_id as appmetricaDeviceId,
