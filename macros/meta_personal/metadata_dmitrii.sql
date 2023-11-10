@@ -13,7 +13,7 @@ entities:
   Account:
     keys:
     - name: accountName
-  AppMetricaDevice:
+  AppMetricaDeviceId:
     glue: yes
     keys:
     - name: appmetricaDeviceId
@@ -31,17 +31,34 @@ entities:
   OsName:
     keys:
     - name: osName
+  MpCardNumber:
+    glue: yes
+    keys:
+    - name: mpCardNumber
 links:
   AppInstallStat:
     keys:
     - name: installDateTime
     entities:
     - Account
-    - AppMetricaDevice
+    - AppMetricaDeviceId
     - MobileAdsId
     - CrmUser
     - OsName
     - City
     - UtmParams
-    - UtmHash
+  AppProfileMatching:
+    entities:
+    - AppMetricaDeviceId
+    - MpCardNumber
+  AppEventStat:
+    keys:
+    - name: __datetime
+    entities:
+    - Account
+    - AppMetricaDeviceId
+    - MobileAdsId
+    - CrmUser
+    - OsName
+    - City
 {%- endmacro -%}
