@@ -9,12 +9,13 @@
 
 select
 *,
-{{ link_hash('VisitStat',metadata)}},
+{{ link_hash('YmVisit',metadata)}},
 {{ link_hash('AdSessionStat',metadata)}},
 {{entity_hash('Account',metadata)}},
 {{entity_hash('YmClient',metadata)}},
 {{entity_hash('Visit',metadata)}},
-{{entity_hash('Transactions',metadata)}}
+{{entity_hash('Transactions',metadata)}},
+{{entity_hash('UtmHash',metadata)}}
 
 from {{ref('join_ym_visit')}}
-where VisitStatHash !=''
+where VisitHash !=''

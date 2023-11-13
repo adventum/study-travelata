@@ -1,18 +1,19 @@
-{%- macro metadata_dmitrii() -%}
+{%- macro metadata_petr() -%}
 entities:
+  Account:
+    keys:
+    - name: accountName
   UtmParams:
     keys:
     - name: utmSource
     - name: utmMedium
     - name: utmCampaign
-    - name: utmTerm
-    - name: utmContent
-  UtmHash:
+#  UtmHash:
+#    keys:
+#    - name: utmHash
+  eventDatetime:
     keys:
-    - name: utmHash
-  Account:
-    keys:
-    - name: __table_name
+    -name: eventDatetime
   AppMetricaDeviceId:
     glue: yes
     keys:
@@ -31,38 +32,36 @@ entities:
   OsName:
     keys:
     - name: osName
-  MpCardNumber:
-    glue: yes
+  publisherName:
     keys:
-    - name: mpCardNumber
-  UtmHash:
+    - name: publisherName
+  sessionId:
     keys:
-    - name: utmHash
+    - name: sessionId
+  installationId:
+    keys:
+    - name: installationId
+  AppSession:
+    keys:
+    - name: SessionId
+#    - name: installationDeviceId
 links:
-  AppInstallStat:
+  AppSessionStat:
     keys:
-    - name: installDateTime
+    - name: toDate(__datetime)
     entities:
-    - Account
-    - AppMetricaDeviceId
-    - MobileAdsId
-    - CrmUser
-    - OsName
-    - City
-    - UtmParams
-    - UtmHash
-  AppProfileMatching:
-    entities:
-    - AppMetricaDeviceId
-    - MpCardNumber
-  AppEventStat:
+    - AppSession
+  AppDeeplinkStat:
     keys:
     - name: __datetime
     entities:
     - Account
-    - AppMetricaDeviceId
+    - AppMetricaDevice
     - MobileAdsId
     - CrmUser
     - OsName
     - City
+    - AdSource
+    - UtmParams
+    - UtmHash
 {%- endmacro -%}

@@ -5,6 +5,7 @@
 }}
 
 select
+toLowCardinality(__table_name) as __table_name,
 cast(id as int) as id,
 utm_hashcode as utmHash,
 JSONExtractString(data, '4') AS utm_base_url,

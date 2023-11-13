@@ -1,5 +1,11 @@
-{%- macro metadata_tatiana() -%}
+{%- macro metadata_ekaterina() -%}
 entities:
+     Account:
+    keys:
+    - name: __table_name
+  Product:
+    keys:
+    - name: productName
   AdSource:
     keys:
     - name: adSourceDirty
@@ -19,49 +25,29 @@ entities:
   AdCampaign:
     keys:
     - name: adCampaignName
+    - name: adCampaignId
   AdGroup:
     keys:
     - name: adGroupName
+    - name: adGroupId
   Ad:
     keys:
     - name: adId
-  Account:
+  CityCode:
     keys:
-    - name: accountName
-  YmClient:
-    glue: yes
-    keys:
-    - name: clientId
-  Visit:
-    keys:
-    - name: visitId
-  Transactions:
-    keys:
-    - name: transactionId
-  AppSession:
-    keys:
-    - name: session
+    - name: cityCode
 links:
   AdCostStat:
     keys:
     - name: adCostDate
     - name: reportType
     entities:
+    - Account
     - AdSource
     - AdCampaign
     - AdGroup
     - Ad
     - AdPhrase
     - UtmParams
-    - UtmHash 
-  AdSessionStat:
-    keys:
-    - name: toDate(visitDateTime)
-    entities:
-    - AppSession
-  YmVisit:
-    keys:
-    - name: toDate(visitDateTime)
-    entities:
-    - Visit
+    - UtmHash
 {%- endmacro -%}
