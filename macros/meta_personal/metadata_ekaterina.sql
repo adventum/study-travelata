@@ -39,7 +39,7 @@ entities:
 links:
   AdCostStat:
     keys:
-    - name: toDate(__datetime)
+    - name: adCostDate
     - name: reportType
     entities:
     - Account
