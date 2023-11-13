@@ -1,7 +1,7 @@
 {{
     config(
         materialized='table',
-        order_by=('profileId','accountName'),
+        order_by=('profileId','__table_name'),
         enabled=true,
     )
 }}

@@ -12,7 +12,7 @@ entities:
     - name: utmHash
   Account:
     keys:
-    - name: accountName
+    - name: __table_name
   AppMetricaDeviceId:
     glue: yes
     keys:
@@ -35,6 +35,9 @@ entities:
     glue: yes
     keys:
     - name: mpCardNumber
+  UtmHash:
+    keys:
+    - name: utmHash
 links:
   AppInstallStat:
     keys:
@@ -47,6 +50,7 @@ links:
     - OsName
     - City
     - UtmParams
+    - UtmHash
   AppProfileMatching:
     entities:
     - AppMetricaDeviceId
