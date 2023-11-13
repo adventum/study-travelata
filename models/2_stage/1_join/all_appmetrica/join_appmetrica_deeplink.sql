@@ -12,7 +12,7 @@ event_datetime as eventDatetime,
 profile_id as profileId,
 appmetrica_device_id as appmetricaDeviceId,
 city as cityName,
-assumeNotNull(COALESCE(NULLIF(google_aid, ''), NULLIF(ios_ifa, ''), appmetrica_device_id, '')) as advertisingId ,
+assumeNotNull(COALESCE(NULLIF(google_aid, ''), NULLIF(ios_ifa, ''), appmetrica_device_id, '')) as mobileAdsId,
 os_name as osName,
 publisher_name as publisherName,
 __table_name as tableName
