@@ -14,7 +14,8 @@ select
 {{entity_hash('Account',metadata)}},
 {{entity_hash('YmClient',metadata)}},
 {{entity_hash('Visit',metadata)}},
-{{entity_hash('Transactions',metadata)}}
+{{entity_hash('Transactions',metadata)}},
+{{entity_hash('UtmHash',metadata)}}
 
 from {{ref('join_ym_visit')}}
 where VisitHash !=''
