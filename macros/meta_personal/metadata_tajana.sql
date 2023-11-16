@@ -59,7 +59,7 @@ links:
     - name: toDate(visitDateTime)
     entities:
     - AppSession
-  YmVisit:
+  VisitStat:
     keys:
     - name: toDate(visitDateTime)
     entities:

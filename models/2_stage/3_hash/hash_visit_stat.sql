@@ -9,7 +9,7 @@
 
 select
 *,
-{{ link_hash('YmVisit',metadata)}},
+{{ link_hash('VisitStat',metadata)}},
 {{ link_hash('AdSessionStat',metadata)}},
 {{entity_hash('Account',metadata)}},
 {{entity_hash('YmClient',metadata)}},
