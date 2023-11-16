@@ -15,5 +15,5 @@ city as cityName,
 assumeNotNull(COALESCE(NULLIF(google_aid, ''), NULLIF(ios_ifa, ''), appmetrica_device_id, '')) as mobileAdsId,
 os_name as osName,
 publisher_name as publisherName,
-__table_name as tableName
+__table_name
 from {{ref ('incremental_sheets_appmetrica_deeplinks')}}
