@@ -1,8 +1,7 @@
 {{
     config(
         materialized='table',
-        order_by=('UtmHashHash'),
-        schema='travelata'
+        order_by=('UtmHashHash')
         )
 }}
 

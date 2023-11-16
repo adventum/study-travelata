@@ -1,5 +1,5 @@
 select MAX(__table_name) as __table_name, 
-       MAX(adCostDate) as asCostDate, 
+       MAX(adCostDate) as adCostDate, 
        MAX(reportType) as reportType, 
        MAX(adSourceDirty) as adSourceDirty,
        MAX(productName) as productName, 
