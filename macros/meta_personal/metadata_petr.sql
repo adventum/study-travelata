@@ -14,7 +14,7 @@ entities:
   eventDatetime:
     keys:
     -name: eventDatetime
-  AppMetricaDeviceId:
+  appmetricaDeviceId:
     glue: yes
     keys:
     - name: appmetricaDeviceId
@@ -56,12 +56,11 @@ links:
     - name: __datetime
     entities:
     - Account
-    - AppMetricaDevice
+    - appmetricaDeviceId
     - MobileAdsId
     - CrmUser
     - OsName
     - City
-    - AdSource
     - UtmParams
     - UtmHash
 {%- endmacro -%}
