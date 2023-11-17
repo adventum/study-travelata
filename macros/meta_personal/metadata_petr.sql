@@ -2,19 +2,19 @@
 entities:
   Account:
     keys:
-    - name: accountName
+    - name: __table_name
   UtmParams:
     keys:
     - name: utmSource
     - name: utmMedium
     - name: utmCampaign
-#  UtmHash:
-#    keys:
-#    - name: utmHash
+  UtmHash:
+    keys:
+    - name: utmHash
   eventDatetime:
     keys:
     -name: eventDatetime
-  AppMetricaDeviceId:
+  appmetricaDeviceId:
     glue: yes
     keys:
     - name: appmetricaDeviceId
@@ -43,25 +43,18 @@ entities:
     - name: installationId
   AppSession:
     keys:
-    - name: SessionId
-#    - name: installationDeviceId
+    - name: appSessionId
 links:
-  AppSessionStat:
-    keys:
-    - name: toDate(__datetime)
-    entities:
-    - AppSession
   AppDeeplinkStat:
     keys:
     - name: __datetime
     entities:
     - Account
-    - AppMetricaDevice
+    - appmetricaDeviceId
     - MobileAdsId
     - CrmUser
     - OsName
     - City
-    - AdSource
     - UtmParams
     - UtmHash
 {%- endmacro -%}
