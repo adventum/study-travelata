@@ -15,7 +15,7 @@ crmUserId,
 osName,
 cityName,
 session_id as sessionId,
-installation_id as installationDeviceId
+installation_id as installationDeviceId,
 '' as itemName,
 '' as itemId,
 '' as itemCategory
