@@ -44,7 +44,13 @@ entities:
   AppSession:
     keys:
     - name: appSessionId
+    - name: installationDeviceId
 links:
+  AppSessionStat:
+    keys:
+    - name: toDate(sessionStartDatetime)
+    entities:
+    - AppSession
   AppDeeplinkStat:
     keys:
     - name: __datetime
