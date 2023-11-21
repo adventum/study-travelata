@@ -1,7 +1,7 @@
 {{
     config(
         materialized='table',
-        enabled=false,
+        enabled=true,
         post_hook= {
             'sql': 'insert into travelata.graph_edge(node_id_left, node_id_right, group_id, has_changed)
                     select
