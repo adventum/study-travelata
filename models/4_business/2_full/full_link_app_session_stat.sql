@@ -4,5 +4,5 @@
     )
 }}
 
-SELECT *
+select *
 from {{ref('link_app_session_stat')}}
