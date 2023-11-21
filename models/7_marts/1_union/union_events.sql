@@ -2,7 +2,8 @@
     config(
         materialized='table',
         schema='maxi',
-        order_by=('__datetime')
+        order_by=('__datetime'),
+        enabled=false
     )
 }}
 
