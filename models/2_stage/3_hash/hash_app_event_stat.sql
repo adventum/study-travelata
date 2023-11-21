@@ -17,4 +17,4 @@ select *,
     {{ entity_hash('OsName', metadata) }},
     {{ entity_hash('City', metadata) }} 
 
-from {{ ref('join_appmetrica_install') }}
+from {{ ref('join_appmetrica_events') }}

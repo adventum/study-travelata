@@ -4,6 +4,6 @@
     )
 }}
 
-SELECT a.*,b.* except(utmHash, load_date, UtmHashHash)
+SELECT a.*,b.* except(utmHash, load_date, UtmHashHash, __table_name)
 from {{ref('link_app_install_stat')}} as a
 left join {{ref('hub_utm_hash')}} as b using (UtmHashHash)
