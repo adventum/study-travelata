@@ -1,5 +1,11 @@
 {%- macro metadata_alexandra() -%}
 entities:
+  Account:
+    keys:
+    - name: __table_name
+  Product:
+    keys:
+    - name: productName
   AdSource:
     keys:
     - name: adSourceDirty
@@ -10,23 +16,45 @@ entities:
     - name: utmCampaign
     - name: utmTerm
     - name: utmContent
-  Account:
+  UtmHash:
     keys:
-    - name: __table_name
-  ProductName:
+    - name: utmHash
+  AdPhrase:
     keys:
-    - name: productName
+    - name: adPhraseId
+  AdCampaign:
+    keys:
+    - name: adCampaignName
+  AdGroup:
+    keys:
+    - name: adGroupName
+  Ad:
+    keys:
+    - name: adId
   CityCode:
     keys:
-    - name: cityCode
+    - name: cityCode  
 links:
+  AdCostStat:
+    keys:
+    - name: adCostDate
+    - name: reportType
+    entities:
+    - Account
+    - AdSource
+    - AdCampaign
+    - AdGroup
+    - Ad
+    - AdPhrase
+    - UtmParams
+    - UtmHash
   MediaplanStat:
     keys:
     - name: planCostDate
     entities:
-    - AdSource
     - Account
-    - ProductName
+    - Product
     - CityCode
+    - AdSource
     - UtmParams
-{%- endmacro -%}
+{%- endmacro -%}    
