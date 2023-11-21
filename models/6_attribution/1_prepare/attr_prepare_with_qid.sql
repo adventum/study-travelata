@@ -1,9 +1,8 @@
 {{
     config(
         materialized='table',
-        schema='maxi',
         order_by=('qid', '__datetime', 'record_source', '__id'),
-        enabled=false
+        enabled=true
     )
 }}
 

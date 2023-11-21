@@ -16,7 +16,9 @@ union_events as (
                        ref('full_link_app_deeplink_stat'),
                        ref('full_link_app_event_stat'),
                        ref('full_link_app_install_stat'),
-                       ref('full_link_app_session_stat')]
+                       ref('full_link_app_session_stat')],
+            exclude=["__datetime"]
+
         )
     }}
  
