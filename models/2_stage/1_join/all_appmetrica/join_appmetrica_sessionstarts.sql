@@ -7,6 +7,7 @@
 SELECT
 session_id AS appSessionId,
 session_start_datetime AS sessionStartDatetime,
+__datetime as appSessionDateTime,
 appmetrica_device_id AS appmetricaDeviceId,
 city AS cityName,
 assumeNotNull(COALESCE(NULLIF(google_aid, ''), NULLIF(ios_ifa, ''), appmetrica_device_id, '')) AS mobileAdsId,

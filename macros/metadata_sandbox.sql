@@ -165,4 +165,28 @@ glue_models:
     - AppInstallStatHash
     - CrmUserHash
     - AppMetricaDeviceIdHash
+  full_link_app_profile_matching:
+    datetime_field: toDateTime(0)
+    cols:
+    - AppProfileMatchingHash
+    - MpCardNumberHash
+    - AppMetricaDeviceIdHash
+  full_link_app_deeplink_stat:
+    datetime_field: deeplinkDateTime
+    cols:
+    - AppDeeplinkStatHash
+    - CrmUserHash
+    - AppMetricaDeviceIdHash
+  full_link_app_event_stat:
+    datetime_field: eventDateTime
+    cols:
+    - AppEventStatHash
+    - CrmUserHash 
+    - AppMetricaDeviceIdHash
+  full_link_app_session_stat:
+    datetime_field: appSessionDateTime
+    cols:
+    - AppSessionStatHash
+    - CrmUserHash
+    - AppMetricaDeviceIdHash
 {%- endmacro -%}

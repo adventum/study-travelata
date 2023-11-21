@@ -2,3 +2,4 @@ target/
 logs/
 models/sandbox/
 models/sandbox2/
+dbt_packages/

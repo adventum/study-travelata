@@ -2,7 +2,7 @@
     config(
         materialized='table',
         order_by=('key_hash'),
-        enabled=false
+        enabled=true
     )
 }}
 

@@ -3,7 +3,7 @@
         materialized='table',
         order_by=('__datetime', 'record_source', '__id'),
         pre_hook="{{ calc_graph('travelata') }}",
-        enabled=false
+        enabled=true
     )
 }}
 

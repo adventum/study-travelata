@@ -8,7 +8,7 @@ select
     __datetime as __datetime,
     parseDateTime(install_datetime, '%d.%m.%Y') as installDateTime,
     parseDateTime(click_datetime, '%d.%m.%Y') as clickDateTime,
-    toLowCardinality(splitByChar('_',  `__table_name`)[6]) as __table_name,
+    __table_name as __table_name,
     appmetrica_device_id as appmetricaDeviceId,
     is_reinstallation as isReinstallation,
     assumeNotNull(COALESCE(NULLIF(google_aid, ''), NULLIF(ios_ifa, ''), appmetrica_device_id, '')) as mobileAdsId,
