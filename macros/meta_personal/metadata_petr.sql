@@ -14,7 +14,7 @@ entities:
   eventDatetime:
     keys:
     -name: eventDatetime
-  appmetricaDeviceId:
+  AppMetricaDeviceId:
     glue: yes
     keys:
     - name: appmetricaDeviceId
@@ -51,12 +51,13 @@ links:
     - name: toDate(sessionStartDatetime)
     entities:
     - AppSession
+    - CrmUser
   AppDeeplinkStat:
     keys:
     - name: __datetime
     entities:
     - Account
-    - appmetricaDeviceId
+    - AppMetricaDeviceId
     - MobileAdsId
     - CrmUser
     - OsName

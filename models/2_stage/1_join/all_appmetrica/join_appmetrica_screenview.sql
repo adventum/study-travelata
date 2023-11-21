@@ -7,7 +7,7 @@
 
 select
 __datetime,
-eventDateTime,
+__datetime as eventDateTime,
 accountName,
 appmetricaDeviceId,
 appmetricamobileAdsId_device_id as mobileAdsId,

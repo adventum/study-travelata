@@ -6,7 +6,7 @@
 
 select 
     __datetime as __datetime,
-    event_datetime as eventDateTime,
+    __datetime as eventDateTime,
     toLowCardinality(splitByChar('_',  `__table_name`)[6]) as __table_name,
     appmetrica_device_id as appmetricaDeviceId,
     assumeNotNull(COALESCE(NULLIF(google_aid, ''), NULLIF(ios_ifa, ''), appmetrica_device_id, '')) as mobileAdsId,
