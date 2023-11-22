@@ -2,7 +2,12 @@
     config(
         materialized='table',
         schema='maxi',
+<<<<<<< HEAD
         order_by = ('qid', '__datetime', '__id')
+=======
+        order_by = ('qid', '__datetime', '__id'),
+        enabled=false
+>>>>>>> main
     )
 }}
 

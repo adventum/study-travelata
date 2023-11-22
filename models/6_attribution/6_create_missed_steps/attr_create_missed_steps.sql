@@ -2,6 +2,10 @@
     config(
         materialized='table',
         schema='maxi',
+<<<<<<< HEAD
+=======
+        enabled=false
+>>>>>>> main
     )
 }}
 

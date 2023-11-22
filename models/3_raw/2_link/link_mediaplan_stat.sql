@@ -1,6 +1,6 @@
 {{
     config(
-       materialized='view' )
+        materialized='view')
 }}
 
 {% set metadata = fromyaml(metadata_alexandra()) %}

@@ -46,7 +46,7 @@ link_app_profile_matching as (
 
 graph_tuples as (
 
-    {{ graph_tuples(fromyaml(metadata()), 'travelata') }}
+    {{ graph_tuples(fromyaml(metadata_sandbox()), 'travelata') }}
 
 )
 

@@ -2,7 +2,11 @@
     config(
         materialized='table',
         order_by=('__datetime', 'record_source', '__id'),
+<<<<<<< HEAD
         schema='maxi',
+=======
+        enabled=true
+>>>>>>> main
     )
 }}
 
@@ -16,7 +20,13 @@ union_events as (
                        ref('full_link_app_deeplink_stat'),
                        ref('full_link_app_event_stat'),
                        ref('full_link_app_install_stat'),
+<<<<<<< HEAD
                        ref('full_link_app_session_stat')]
+=======
+                       ref('full_link_app_session_stat')],
+            exclude=["__datetime"]
+
+>>>>>>> main
         )
     }}
  
