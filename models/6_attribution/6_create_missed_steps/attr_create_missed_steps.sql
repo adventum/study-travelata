@@ -1,8 +1,7 @@
 {{
     config(
         materialized='table',
-        schema='maxi',
-        enabled=false
+        enabled=true
     )
 }}
 
@@ -24,11 +23,11 @@ generate_all_priorities as (
 
 final as (
     select
-        first_value(nullIf(__id, '')) OVER (PARTITION BY qid ORDER BY gen_priority, __datetime ROWS BETWEEN current row AND UNBOUNDED FOLLOWING ) as __id,
+        first_value(nullIf(__id, '')) OVER (PARTITION BY qid ORDER BY gen_priority,period_number.__datetime ROWS BETWEEN current row AND UNBOUNDED FOLLOWING ) as __id,
         gen_priority as __priority,
         qid,
-        first_value(nullIf(toDate(__datetime), '1970-01-01')) OVER (PARTITION BY qid ORDER BY gen_priority, __datetime ROWS BETWEEN current row AND UNBOUNDED FOLLOWING ) as __datetime,
-        first_value(nullIf(__period_number, 0)) OVER (PARTITION BY qid, __datetime ORDER BY gen_priority, __datetime ROWS BETWEEN current row AND UNBOUNDED FOLLOWING ) as __period_number,
+        first_value(nullIf(toDate(__datetime), '1970-01-01')) OVER (PARTITION BY qid ORDER BY gen_priority,period_number.__datetime ROWS BETWEEN current row AND UNBOUNDED FOLLOWING ) as __datetime,
+        first_value(nullIf(__period_number, 0)) OVER (PARTITION BY qid ORDER BY gen_priority,period_number.__datetime ROWS BETWEEN current row AND UNBOUNDED FOLLOWING ) as __period_number,
         case when period_number.qid = 0 then true else false end as __is_missed
 
     from generate_all_priorities
@@ -43,5 +42,4 @@ select
     __period_number,
     __is_missed,
     row_number() over (partition by qid order by __datetime, __priority, __id) AS __rn
-
 from final
