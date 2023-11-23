@@ -1,7 +1,6 @@
 {{
     config(
         materialized='table',
-        schema='maxi',
         enabled=false
     )
 }}
@@ -15,8 +14,10 @@ select
     visitId,
     case
         when __is_missed and __priority = 1 then '[Без сессии]'
-        when __is_missed and __priority = 2 then '[Без добавления в корзину]'
-        when __is_missed and __priority = 3 then '[Заказ без чекаута]'
+        when __is_missed and __priority = 2 then '[Без поиска]'
+        when __is_missed and __priority = 3 then '[Заказ без hotelPage]'
+        when __is_missed and __priority = 4 then '[Заказ без tourPage]'
+        when __is_missed and __priority = 5 then '[Заказ без checkout]'
         else adSourceDirty
     end as adSourceDirty,
     adId,

@@ -1,9 +1,8 @@
 {{
     config(
         materialized='table',
-        schema='maxi',
         order_by=('qid', '__datetime', 'record_source', '__id'),
-        enabled=false
+        enabled=true
     )
 }}
 
@@ -11,7 +10,7 @@ with prep_new_period as (
 
     select
         *,
-        max(case when __priority in (0,1,2,3,4,5) then __datetime else null end) over (partition by qid order by __rn rows between unbounded preceding and 1 preceding) as prep_new_period
+        max(case when __priority in (1,2,3,4,5,6) then __datetime else null end) over (partition by qid order by __rn rows between unbounded preceding and 1 preceding) as prep_new_period
     from {{ ref('attr_add_row_number') }}
 
 )
