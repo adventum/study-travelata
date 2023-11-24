@@ -1,9 +1,8 @@
 {{
     config(
         materialized='table',
-        schema='maxi',
         order_by = ('qid', '__datetime', '__id'),
-        enabled=false
+        enabled=true
     )
 }}
 
@@ -30,13 +29,13 @@ target_count as (
 )
 select
     qid, __datetime, __id, __priority,`__is_missed`,__period_number,
-    first_value(adSourceClear) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_adSourceClear,
+    --first_value(adSourceClear) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_adSourceClear,
     first_value(adSourceDirty) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_adSourceDirty,
     first_value(utmMedium) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utmMedium,
     first_value(utmCampaign) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utmCampaign,
-    first_value(utmTerm) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utmTerm,
-    first_value(utm_utmContent) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utmContent,
-    first_value(utm_project) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utm_project,
-    first_value(utm_strategy) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utm_strategy,
-    first_value(utm_audience) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utm_audience
+    first_value(utmTerm) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utmTerm
+    --first_value(utm_utmContent) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utmContent,
+    --first_value(utm_project) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utm_project,
+    --first_value(utm_strategy) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utm_strategy,
+    --first_value(utm_audience) over(partition by qid, __period_number, __target_count order by __datetime, __priority, __id) as attributed_last_click_utm_audience
 from target_count

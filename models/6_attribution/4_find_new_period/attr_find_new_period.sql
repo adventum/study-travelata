@@ -21,6 +21,6 @@ select
     __id,
     __datetime,
     __rn,
-    if(toDate(__datetime) - toDate(prep_new_period) < 90, false, true) as __is_new_period
+    if(toDate(__datetime) - toDate(prep_new_period) < 3, false, true) as __is_new_period
 
 from prep_new_period
