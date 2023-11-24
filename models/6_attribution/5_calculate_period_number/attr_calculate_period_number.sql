@@ -1,12 +1,17 @@
 {{
     config(
         materialized='table',
+<<<<<<< HEAD
         schema='maxi',
 <<<<<<< HEAD
         order_by=('qid', '__datetime', 'record_source', '__id')
 =======
         order_by=('qid', '__datetime', 'record_source', '__id'),
         enabled=false
+>>>>>>> main
+=======
+        order_by=('qid', '__datetime', 'record_source', '__id'),
+        enabled=true
 >>>>>>> main
     )
 }}
