@@ -1,9 +1,8 @@
 {{
     config(
         materialized='table',
-        schema='maxi',
         order_by = ('__datetime'),
-        enabled=false
+        enabled=true
     )
 }}
 
