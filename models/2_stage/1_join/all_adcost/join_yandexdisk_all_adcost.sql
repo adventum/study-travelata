@@ -33,7 +33,7 @@ select
     UtmCampaign as utmCampaign,
     '' as utmTerm,
     '' as utmContent,
-    {{get_utmhash('~', ['UtmCampaign'])}} as utmHash,
+    {{get_utmhash('~', ['utmCampaign'])}} as utmHash,
     toFloat64(Cost) as adCost,
     toInt32(Impressions) as impressions,
     toInt32(Clicks) as clicks,
