@@ -21,7 +21,7 @@ select
     if(event_name='serp', 1, 0) as serp,
     if(event_name='hotel_page', 1, 0) as hotelPage,
     if(event_name='tour_page', 1, 0) as tourPage,
-    if(event_name='chekout', 1, 0) as checkout,
+    if(event_name='checkout', 1, 0) as checkout,
     if(event_name='payment', 1, 0) as payment
     
 
